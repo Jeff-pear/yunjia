@@ -1,0 +1,267 @@
+
+<title>点评管理 - 智选云家</title>
+
+<!-- ajax layout which only needs content area -->
+<div class="page-header">
+	<h1>
+		我的订单
+		<small>
+			<i class="jeff-icon fa fa-angle-double-right"></i>
+			点评管理
+		</small>
+	</h1>
+</div><!-- /.page-header -->
+
+
+		<div class="row">
+			<div class="widget-box transparent" id="recent-box">
+
+					<ul class="nav nav-tabs" id="myTab">
+						<li class="active">
+							<a data-toggle="tab" href="#unreviews-tab">
+								<span class="badge badge-danger">4</span>
+								未点评
+							</a>
+						</li>
+
+						<li>
+							<a data-toggle="tab" href="#reviews-tab">
+								已点评
+								<i class="green jeff-icon fa fa-bullhorn bigger-120 "></i>
+							</a>
+						</li>
+					</ul>
+
+					<div class="widget-body">
+						<div class="widget-main padding-4">
+							<div class="tab-content padding-8">
+								<div id="unreviews-tab" class="tab-pane active">
+
+									<!-- #section:pages/dashboard.tasks -->
+
+									<table id="simple-table1" class="table  table-bordered table-hover">
+											<thead>
+												<tr>
+
+													<th>订单号</th>
+
+													<th class="hidden-480">地址</th>
+
+													<th>操作</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+
+													<td>
+														JK2333012122
+													</td>
+													<td class="hidden-480">大连市沙河口区联合路123号－1</td>
+
+
+													<td>
+														<div class="hidden-sm hidden-xs btn-group">
+																<a href="#page/reviews_detail" class="btn btn-xs btn-info">
+																	<i class="jeff-icon fa fa-pencil bigger-120 "></i>
+																	立即点评
+																</a>
+
+															<!-- <button class="btn btn-xs btn-danger">
+																<i class="jeff-icon fa fa-trash-o bigger-120"></i>
+																删除
+															</button> -->
+
+														</div>
+
+														<div class="hidden-md hidden-lg">
+															<div class="inline pos-rel">
+																<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																	<i class="jeff-icon fa fa-cog icon-only bigger-110"></i>
+																</button>
+
+																<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																	<li>
+																		<a href="#" class="tooltip-info" data-rel="tooltip" title="立即点评">
+																			<span class="blue">
+																				<i class="jeff-icon fa fa-search-plus bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+
+																	<!-- <li>
+																		<a href="#" class="tooltip-error" data-rel="tooltip" title="删除">
+																			<span class="red">
+																				<i class="jeff-icon fa fa-trash-o bigger-120"></i>
+																			</span>
+																		</a>
+																	</li> -->
+																</ul>
+															</div>
+														</div>
+													</td>
+												</tr>
+
+												<tr>
+
+
+													<td>
+														jk13314234234234
+													</td>
+
+													<td class="hidden-480">2,595</td>
+
+
+													<td>
+														<div class="hidden-sm hidden-xs btn-group">
+															<a href="#page/reviews-detail" class="btn btn-xs btn-info">
+																<i class="jeff-icon fa fa-pencil bigger-120"></i>
+																立即点评
+															</a>
+
+															<!-- <button class="btn btn-xs btn-danger">
+																<i class="jeff-icon fa fa-trash-o bigger-120"></i>
+																删除
+															</button> -->
+														</div>
+
+														<div class="hidden-md hidden-lg">
+															<div class="inline pos-rel">
+																<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																	<i class="jeff-icon fa fa-cog icon-only bigger-110"></i>
+																</button>
+
+																<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																	<li>
+																		<a href="#" class="tooltip-info" data-rel="tooltip" title="立即点评">
+																			<span class="blue">
+																				<i class="jeff-icon fa fa-search-plus bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+
+																</ul>
+															</div>
+														</div>
+													</td>
+												</tr>
+
+
+											</tbody>
+										</table>
+
+									<!-- /section:pages/dashboard.tasks -->
+								</div>
+
+								<div id="reviews-tab" class="tab-pane">
+									<!-- #section:pages/dashboard.members -->
+
+									<table id="simple-table" class="table  table-bordered table-hover">
+											<thead>
+												<tr>
+
+													<th>订单号</th>
+
+													<th class="hidden-480">地址</th>
+													<th>获得积分</th>
+													<th>
+														<i class="jeff-icon fa fa-clock-o bigger-110 hidden-480"></i>
+														点评时间
+													</th>
+
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+
+													<td>
+														JK2333012122
+													</td>
+													<td class="hidden-480">大连市沙河口区联合路123号－1</td>
+													<td class="text-danger"><b>+25</b></td>
+
+													<td>2012-12-12 11:23:22</td>
+
+
+												</tr>
+
+												<tr>
+
+													<td>
+														jk13314234234234
+													</td>
+
+													<td class="hidden-480">2,595</td>
+													<td class="text-danger"><b>+20</b></td>
+													<td>2016-04-12</td>
+
+												
+												</tr>
+
+
+											</tbody>
+										</table>
+
+
+
+
+									<!-- /section:pages/dashboard.members -->
+								</div><!-- /.#member-tab -->
+
+
+							</div>
+						</div><!-- /.widget-main -->
+					</div><!-- /.widget-body -->
+				</div><!-- /.widget-box -->
+
+		</div><!-- /.row -->
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+
+
+	var scripts = [null,"", null]
+	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
+	  //inline scripts related to this page
+		 jQuery(function($) {
+
+			 $('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+
+
+
+				//select/deselect all rows according to table header checkbox
+				var active_class = 'active';
+				$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+					var th_checked = this.checked;//checkbox inside "TH" table header
+
+					$(this).closest('table').find('tbody > tr').each(function(){
+						var row = this;
+						if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
+						else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
+					});
+				});
+
+
+
+				/********************************/
+				//add tooltip for small view action buttons in dropdown menu
+				$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+
+				//tooltip placement on right or left
+				function tooltip_placement(context, source) {
+					var $source = $(source);
+					var $parent = $source.closest('table')
+					var off1 = $parent.offset();
+					var w1 = $parent.width();
+
+					var off2 = $source.offset();
+					//var w2 = $source.width();
+
+					if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+					return 'left';
+				}
+
+
+	})
+	});
+</script>

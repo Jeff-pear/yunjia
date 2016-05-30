@@ -1,0 +1,89 @@
+
+<title>点评管理 - 智选云家</title>
+
+<!-- ajax layout which only needs content area -->
+<div class="page-header">
+	<h1>
+		我的点评
+		<small>
+			<i class="jeff-icon fa fa-angle-double-right"></i>
+			点评详情
+		</small>
+	</h1>
+</div><!-- /.page-header -->
+
+
+		<div class="row">
+			<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-top"> 整体满意度 </label>
+
+							<div class="col-sm-9">
+								<!-- #section:plugins/misc.raty -->
+								<div class="rating inline"></div>
+
+								<!-- /section:plugins/misc.raty -->
+							</div>
+						</div>
+
+						<div class="space-6"></div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-top" >点评内容</label>
+
+							<div class="col-xs-12 col-sm-9">
+								<!-- #section:plugins/input.multiselect -->
+								<textarea name="CommentContent"></textarea>
+
+								<!-- /section:plugins/input.multiselect -->
+							</div>
+						</div>
+
+						<div class="hr hr-16 hr-dotted"></div>
+
+						 <div class="center">
+							 <a class="btn btn-info" onClick="javascript:formSub();" >
+	 							提交点评
+	 						</a>
+						 </div>
+
+					</form>
+		</div><!-- /.row -->
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+var scripts = [null,"../../assets/js/jquery.raty.js","../../assets/js/typeahead.jquery.js", null]
+function formSub(){
+debugger;
+	var CommentScore = $('.rating').raty('score');
+	var CommentContent = $('[name=CommentContent]').val();
+	$.post("action",{CommentScore:CommentScore,CommentContent:CommentContent},
+	 function(data){
+		 $('#msg').html(data);
+	 },
+	 "text");//这里返回的类型有：json,html,xml,text
+}
+	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
+	  //inline scripts related to this page
+		 jQuery(function($) {
+
+			 $('.rating').raty({
+			 			'cancel' : false,
+			 			'half': false,
+			 			'starType' : 'i',
+						'hints' : ['失望', '不满', '一般', '满意', '很满意']
+			 			/**,
+
+			 			'click': function() {
+			 				setRatingColors.call(this);
+			 			},
+			 			'mouseover': function() {
+			 				setRatingColors.call(this);
+			 			},
+			 			'mouseout': function() {
+			 				setRatingColors.call(this);
+			 			}*/
+			 		})
+
+	})
+	});
+</script>

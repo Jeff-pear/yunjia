@@ -1,0 +1,1246 @@
+
+<title>用户信息 - 智选云家</title>
+
+<link rel="stylesheet" href="../../assets/css/jquery-ui.custom.css" />
+<link rel="stylesheet" href="../../assets/css/jquery.gritter.css" />
+<link rel="stylesheet" href="../../assets/css/select2.css" />
+<link rel="stylesheet" href="../../assets/css/bootstrap-datepicker3.css" />
+<link rel="stylesheet" href="../../assets/css/bootstrap-editable.css" />
+<link rel="stylesheet" href="../../assets/css/jquery.gritter.css" />
+
+<!-- ajax layout which only needs content area -->
+<div class="page-header">
+	<h1>
+		用户信息
+		<small>
+			<i class="jeff-icon fa fa-angle-double-right"></i>
+			用户信息、常用联系人、密码修改
+		</small>
+	</h1>
+</div><!-- /.page-header -->
+
+<div class="row">
+	<div class="col-xs-12">
+		<!-- PAGE CONTENT BEGINS -->
+		<div class="clearfix">
+			<div class="pull-left alert alert-success no-margin">
+				<button type="button" class="close" data-dismiss="alert">
+					<i class="jeff-icon fa fa-times"></i>
+				</button>
+
+				<i class="jeff-icon fa fa-umbrella bigger-120 blue"></i>
+				点击头像可以进行更换，仅支持[jpg, jpeg, png, gif]...
+			</div>
+
+			<div class="pull-right">
+				<span class="green middle bolder">功能选择: &nbsp;</span>
+
+				<div class="btn-toolbar inline middle no-margin">
+					<div data-toggle="buttons" class="btn-group no-margin">
+						<label class="btn btn-sm btn-yellow active">
+							<span class="bigger-110">用户信息</span>
+
+							<input type="radio" value="1" />
+						</label>
+						
+						<label class="btn btn-sm btn-yellow">
+							<span class="bigger-110">常用联系人</span>
+
+							<input type="radio" value="2" />
+						</label>
+						
+						<label class="btn btn-sm btn-yellow">
+							<span class="bigger-110">密码修改</span>
+
+							<input type="radio" value="3" />
+						</label>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="hr dotted"></div>
+
+		<div>
+			<div id="user-profile-1" class="user-profile row">
+				<div class="col-xs-12 col-sm-3 center">
+					<div>
+						<!-- #section:pages/profile.picture -->
+						<span class="profile-picture">
+							<img class="editable img-responsive" alt="Alex's Avatar" id="avatar2" src="../../assets/avatars/profile-pic.jpg" />
+						</span>
+
+						<!-- /section:pages/profile.picture -->
+						<div class="space-4"></div>
+
+						<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+							<div class="inline position-relative">
+								<a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
+									<i class="jeff-icon fa fa-circle light-green"></i>
+									&nbsp;
+									<span class="white">胡晓峰</span>
+								</a>
+
+								
+							</div>
+						</div>
+					</div>
+
+					<div class="space-6"></div>
+
+					<!-- #section:pages/profile.contact -->
+					<div class="profile-contact-info">
+						<div class="well well-sm">
+							<div class="inline middle blue bigger-110"> 您的个人信息完整度 </div>
+
+							&nbsp; &nbsp; &nbsp;
+							<div style="width:200px;" data-percent="70%" class="inline middle no-margin progress progress-striped active pos-rel">
+								<div class="progress-bar progress-bar-success" style="width:70%"></div>
+							</div>
+						</div> 
+
+						<div class="space-6"></div>
+
+					</div>
+
+				
+
+
+				</div>
+
+				<div class="col-xs-12 col-sm-9">
+					<div class="center">
+						<span class="btn btn-app btn-sm btn-light no-hover">
+							<span class="line-height-1 smaller-90 blue"> 积分 </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> 1441 </span>
+						</span>
+
+						<span class="btn btn-app btn-sm btn-yellow no-hover">
+							<span class="line-height-1 smaller-90"> 订单数 </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> 12 </span>
+						</span>
+
+						<span class="btn btn-app btn-sm btn-pink no-hover">
+							<span class="line-height-1 smaller-90"> 收藏 </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> 5 </span>
+						</span>
+
+						<span class="btn btn-app btn-sm btn-grey no-hover">
+							<span class="line-height-1 bigger-170"> 23 </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> Reviews </span>
+						</span>
+
+						<span class="btn btn-app btn-sm btn-success no-hover">
+							<span class="line-height-1 bigger-170"> 7 </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> Albums </span>
+						</span>
+
+						<span class="btn btn-app btn-sm btn-primary no-hover">
+							<span class="line-height-1 bigger-170"> 55 </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> Contacts </span>
+						</span>
+					</div>
+
+					<div class="space-12"></div>
+
+					<!-- #section:pages/profile.info -->
+					<div class="profile-user-info profile-user-info-striped">
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 用户名 </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="username" name="UserLoginName">alexdoe</span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 邮箱 </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="email" name="UserMail">324@company.com</span>
+														
+													</div>
+													<button class="btn btn-info btn-xs btn-success" id="check-email">立即验证</button>
+												</div>
+												
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 手机 </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="phone" name="UserMobile">12132323</span>
+														
+													</div>
+													<button class="btn btn-info btn-xs btn-success" id="check-phone">立即验证</button>
+												</div>
+												
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 性别 </div>
+
+													<div class="profile-info-value">
+														<input class="jeff" type="radio" name="UserSex" value="female" >
+														<span class="lbl middle"> 男</span>&nbsp;
+														<input class="jeff" type="radio" name="UserSex" value="male" >
+														<span class="lbl middle"> 女</span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 出生日期 </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="age" name="UserBorthDay">2010/06/20</span>
+													</div>
+												</div>
+												
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 所在城市 </div>
+
+													<div class="profile-info-value">
+														<i class="fa fa-map-marker light-orange bigger-110"></i>
+														<span class="editable" id="country">Netherlands</span>
+														<span class="editable" id="city">Amsterdam</span>
+													</div>
+												</div>
+												
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 教育 </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="education" name="UserEducation">--请选择--</span>
+													</div>
+												</div>
+												
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 行业 </div>
+
+													<div class="profile-info-value">
+														<!-- #section:plugins/input.select2 -->
+														
+														<div>
+															<select multiple="" id="state" name="state" class="select2" data-placeholder="点击添加...">
+																<option value="AL">造船</option>
+																<option value="AK">军工</option>
+																<option value="AZ">艺术</option>
+																<option value="AR">体育</option>
+																<option value="CA">医疗</option>
+																<option value="CO">互联网</option>
+																<option value="CT">新闻媒体</option>
+																
+																
+															</select>
+														</div>
+													</div>
+												
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 注册时间 </div>
+
+													<div class="profile-info-value">
+														<span id="UserRegisteDate" >2010/06/20 23:12:53</span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 最近登录时间 </div>
+
+													<div class="profile-info-value">
+														<span id="UserLastLoginDate">2016/05/05 12:12:12</span>
+													</div>
+												</div>
+														
+												
+												<div class="profile-info-row">
+													<div class="profile-info-name"> 关于我 </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="about">这是一些描述...</span>
+													</div>
+												</div>
+
+												<div >
+													<div class="col-md-offset-3 col-md-9">
+														<button class="btn btn-info btn-xlg" type="button">
+															<i class="jeff-icon fa fa-check bigger-110"></i>
+															Save
+														</button>
+
+														
+													</div>
+												</div>
+											</div>
+
+					<!-- /section:pages/profile.info -->
+					<div class="space-20"></div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="hide">
+			<div id="user-profile-2" class="user-profile">
+				<div class="tabbable">
+					<ul class="nav nav-tabs padding-18">
+						
+						<li class="active">
+							<a data-toggle="tab" href="#friends">
+								<i class="blue jeff-icon fa fa-users bigger-120"></i>
+								常用联系人
+							</a>
+						</li>
+
+					</ul>
+
+					<div class="tab-content no-border padding-24">
+						
+						<div id="friends" class="tab-pane in active">
+							<!-- #section:pages/profile.friends -->
+							<div class="profile-users clearfix">
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar4.png" alt="Bob Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-online"></span>
+													Bob Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Content Editor</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 orange"></i>
+													<span class="green"> 20 mins ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar1.png" alt="Rose Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-offline"></span>
+													Rose Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Graphic Designer</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 grey"></i>
+													<span class="grey"> 30 min ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar.png" alt="Jim Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-busy"></span>
+													Jim Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">SEO &amp; Advertising</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 red"></i>
+													<span class="grey"> 1 hour ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar5.png" alt="Alex Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-idle"></span>
+													Alex Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Marketing</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 orange"></i>
+													<span class=""> 40 minutes idle </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar2.png" alt="Phil Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-online"></span>
+													Phil Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Public Relations</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 orange"></i>
+													<span class="green"> 2 hours ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar3.png" alt="Susan Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-online"></span>
+													Susan Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">HR Management</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 orange"></i>
+													<span class="green"> 20 mins ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar1.png" alt="Jennifer Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-offline"></span>
+													Jennifer Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Graphic Designer</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 grey"></i>
+													<span class="grey"> 2 hours ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar3.png" alt="Alexa Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-offline"></span>
+													Alexa Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Accounting</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 grey"></i>
+													<span class="grey"> 4 hours ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- /section:pages/profile.friends -->
+							<div class="hr hr10 hr-double"></div>
+
+							<ul class="pager pull-right">
+								<li class="previous disabled">
+									<a href="#">&larr; Prev</a>
+								</li>
+
+								<li class="next">
+									<a href="#">Next &rarr;</a>
+								</li>
+							</ul>
+						</div><!-- /#friends -->
+					
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="hide">
+			<div id="user-profile-3" class="user-profile row">
+				<div class="col-sm-offset-1 col-sm-10">
+					
+					<form class="form-horizontal">
+						<div class="tabbable">
+							<ul class="nav nav-tabs padding-16">
+								
+
+								<li class="active">
+									<a data-toggle="tab" href="#edit-password">
+										<i class="blue jeff-icon fa fa-key bigger-125"></i>
+										密码
+									</a>
+								</li>
+							</ul>
+
+							<div class="tab-content profile-edit-tab-content">
+								
+								<div id="edit-password" class="tab-pane in active">
+									<div class="space-10"></div>
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-pass1">新密码</label>
+
+										<div class="col-sm-9">
+											<input type="password" id="form-field-pass1" />
+										</div>
+									</div>
+
+									<div class="space-4"></div>
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-pass2">确认密码</label>
+
+										<div class="col-sm-9">
+											<input type="password" id="form-field-pass2" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="clearfix form-actions">
+							<div class="col-md-offset-3 col-md-9">
+								<button class="btn btn-info" type="button">
+									<i class="jeff-icon fa fa-check bigger-110"></i>
+									保存
+								</button>
+
+								&nbsp; &nbsp;
+								<button class="btn" type="reset">
+									<i class="jeff-icon fa fa-undo bigger-110"></i>
+									重置
+								</button>
+							</div>
+						</div>
+					</form>
+				</div><!-- /.span -->
+			</div><!-- /.user-profile -->
+		</div>
+
+		<!-- PAGE CONTENT ENDS -->
+	</div><!-- /.col -->
+</div><!-- /.row -->
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+  <script src="../../assets/js/excanvas.js"></script>
+<![endif]-->
+<script type="text/javascript">
+	var scripts = [null,"../../assets/js/jquery-ui.custom.js","../../assets/js/jquery.ui.touch-punch.js","../../assets/js/jquery.gritter.js","../../assets/js/bootbox.js","../../assets/js/jquery.easypiechart.js","../../assets/js/date-time/bootstrap-datepicker.js","../../assets/js/jquery.hotkeys.js","../../assets/js/bootstrap-wysiwyg.js","../../assets/js/select2.js","../../assets/js/jquery.gritter.js","../../assets/js/x-editable/bootstrap-editable.js","../../assets/js/x-editable/jeff-editable.js","../../assets/js/jquery.maskedinput.js", null]
+	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
+	  //inline scripts related to this page
+		 jQuery(function($) {
+	
+		//editables on first profile page
+		$.fn.editable.defaults.mode = 'inline';
+		$.fn.editableform.loading = "<div class='editableform-loading'><i class='jeff-icon fa fa-spinner fa-spin fa-2x light-blue'></i></div>";
+	    $.fn.editableform.buttons = '<button type="submit" class="btn btn-info editable-submit"><i class="jeff-icon fa fa-check"></i></button>'+
+	                                '<button type="button" class="btn editable-cancel"><i class="jeff-icon fa fa-times"></i></button>';    
+		
+		//editables 
+		
+		//text editable
+	    $('#username')
+		.editable({
+			type: 'text',
+			name: 'username'		
+	    });
+	
+	
+		
+		//select2 editable
+		var countries = [];
+	    $.each({ "CA": "Canada", "IN": "India", "NL": "Netherlands", "TR": "Turkey", "US": "United States"}, function(k, v) {
+	        countries.push({id: k, text: v});
+	    });
+	
+		var cities = [];
+		cities["CA"] = [];
+		$.each(["Toronto", "Ottawa", "Calgary", "Vancouver"] , function(k, v){
+			cities["CA"].push({id: v, text: v});
+		});
+		cities["IN"] = [];
+		$.each(["Delhi", "Mumbai", "Bangalore"] , function(k, v){
+			cities["IN"].push({id: v, text: v});
+		});
+		cities["NL"] = [];
+		$.each(["Amsterdam", "Rotterdam", "The Hague"] , function(k, v){
+			cities["NL"].push({id: v, text: v});
+		});
+		cities["TR"] = [];
+		$.each(["Ankara", "Istanbul", "Izmir"] , function(k, v){
+			cities["TR"].push({id: v, text: v});
+		});
+		cities["US"] = [];
+		$.each(["New York", "Miami", "Los Angeles", "Chicago", "Wysconsin"] , function(k, v){
+			cities["US"].push({id: v, text: v});
+		});
+		
+		var currentValue = "NL";
+	    $('#country').editable({
+			type: 'select2',
+			value : 'NL',
+			//onblur:'ignore',
+	        source: countries,
+			select2: {
+				'width': 140
+			},		
+			success: function(response, newValue) {
+				if(currentValue == newValue) return;
+				currentValue = newValue;
+				
+				var new_source = (!newValue || newValue == "") ? [] : cities[newValue];
+				
+				//the destroy method is causing errors in x-editable v1.4.6+
+				//it worked fine in v1.4.5
+				/**			
+				$('#city').editable('destroy').editable({
+					type: 'select2',
+					source: new_source
+				}).editable('setValue', null);
+				*/
+				
+				//so we remove it altogether and create a new element
+				var city = $('#city').removeAttr('id').get(0);
+				$(city).clone().attr('id', 'city').text('Select City').editable({
+					type: 'select2',
+					value : null,
+					//onblur:'ignore',
+					source: new_source,
+					select2: {
+						'width': 140
+					}
+				}).insertAfter(city);//insert it after previous instance
+				$(city).remove();//remove previous instance
+				
+			}
+	    });
+	
+		$('#city').editable({
+			type: 'select2',
+			value : 'Amsterdam',
+			//onblur:'ignore',
+	        source: cities[currentValue],
+			select2: {
+				'width': 140
+			}
+	    });
+	
+		$('#education').editable({
+			type: 'select2',
+			value : 'Amsterdam',
+			//onblur:'ignore',
+	        source: cities[currentValue]
+	    });
+		
+		
+	
+		$('#age').editable({
+			type: 'adate',
+			date: {
+				//datepicker plugin options
+				    format: 'yyyy/mm/dd',
+				viewformat: 'yyyy/mm/dd',
+				 weekStart: 1
+				 
+				//,nativeUI: true//if true and browser support input[type=date], native browser control will be used
+				//,format: 'yyyy-mm-dd',
+				//viewformat: 'yyyy-mm-dd'
+			}
+		})
+		
+		
+		$('#email')
+		.editable({
+			type: 'text',
+			name: 'email'		
+		});
+	
+		$('#phone')
+		.editable({
+			type: 'text',
+			name: 'phone',
+			validate: function(value){
+				 if(!/^(13[0-9]|14[0-9]|15[0-9]|18[0-9])\d{8}$/i.test(value))
+				 {
+					 return '请输入正确的手机号';
+				 }
+			}
+		});
+		
+	
+	
+		$('#about').editable({
+			mode: 'inline',
+	        type: 'wysiwyg',
+			name : 'about',
+	
+			wysiwyg : {
+				//css : {'max-width':'300px'}
+			},
+			success: function(response, newValue) {
+			}
+		});
+		
+		
+		
+		// *** editable avatar *** //
+		try {//ie8 throws some harmless exceptions, so let's catch'em
+	
+			//first let's add a fake appendChild method for Image element for browsers that have a problem with this
+			//because editable plugin calls appendChild, and it causes errors on IE at unpredicted points
+			try {
+				document.createElement('IMG').appendChild(document.createElement('B'));
+			} catch(e) {
+				Image.prototype.appendChild = function(el){}
+			}
+	
+			var last_gritter
+			$('#avatar').editable({
+				type: 'image',
+				name: 'avatar',
+				value: null,
+				//onblur: 'ignore',  //don't reset or hide editable onblur?!
+				image: {
+					//specify jeff file input plugin's options here
+					btn_choose: 'Change Avatar',
+					droppable: true,
+					maxSize: 110000,//~100Kb
+	
+					//and a few extra ones here
+					name: 'avatar',//put the field name here as well, will be used inside the custom plugin
+					on_error : function(error_type) {//on_error function will be called when the selected file has a problem
+						if(last_gritter) $.gritter.remove(last_gritter);
+						if(error_type == 1) {//file format error
+							last_gritter = $.gritter.add({
+								title: 'File is not an image!',
+								text: 'Please choose a jpg|gif|png image!',
+								class_name: 'gritter-error gritter-center'
+							});
+						} else if(error_type == 2) {//file size rror
+							last_gritter = $.gritter.add({
+								title: 'File too big!',
+								text: 'Image size should not exceed 100Kb!',
+								class_name: 'gritter-error gritter-center'
+							});
+						}
+						else {//other error
+						}
+					},
+					on_success : function() {
+						$.gritter.removeAll();
+					}
+				},
+			    url: function(params) {
+					// ***UPDATE AVATAR HERE*** //
+					//for a working upload example you can replace the contents of this function with 
+					//examples/profile-avatar-update.js
+	
+					var deferred = new $.Deferred
+	
+					var value = $('#avatar').next().find('input[type=hidden]:eq(0)').val();
+					if(!value || value.length == 0) {
+						deferred.resolve();
+						return deferred.promise();
+					}
+	
+	
+					//dummy upload
+					setTimeout(function(){
+						if("FileReader" in window) {
+							//for browsers that have a thumbnail of selected image
+							var thumb = $('#avatar').next().find('img').data('thumb');
+							if(thumb) $('#avatar').get(0).src = thumb;
+						}
+						
+						deferred.resolve({'status':'OK'});
+	
+						if(last_gritter) $.gritter.remove(last_gritter);
+						last_gritter = $.gritter.add({
+							title: 'Avatar Updated!',
+							text: 'Uploading to server can be easily implemented. A working example is included with the template.',
+							class_name: 'gritter-info gritter-center'
+						});
+						
+					 } , parseInt(Math.random() * 800 + 800))
+	
+					return deferred.promise();
+					
+					// ***END OF UPDATE AVATAR HERE*** //
+				},
+				
+				success: function(response, newValue) {
+				}
+			})
+		}catch(e) {}
+		
+		/**
+		//let's display edit mode by default?
+		var blank_image = true;//somehow you determine if image is initially blank or not, or you just want to display file input at first
+		if(blank_image) {
+			$('#avatar').editable('show').on('hidden', function(e, reason) {
+				if(reason == 'onblur') {
+					$('#avatar').editable('show');
+					return;
+				}
+				$('#avatar').off('hidden');
+			})
+		}
+		*/
+	
+		//another option is using modals
+		$('#avatar2').on('click', function(){
+			var modal = 
+			'<div class="modal fade">\
+			  <div class="modal-dialog">\
+			   <div class="modal-content">\
+				<div class="modal-header">\
+					<button type="button" class="close" data-dismiss="modal">&times;</button>\
+					<h4 class="blue">Change Avatar</h4>\
+				</div>\
+				\
+				<form class="no-margin">\
+				 <div class="modal-body">\
+					<div class="space-4"></div>\
+					<div style="width:75%;margin-left:12%;"><input type="file" name="file-input" /></div>\
+				 </div>\
+				\
+				 <div class="modal-footer center">\
+					<button type="submit" class="btn btn-sm btn-success"><i class="jeff-icon fa fa-check"></i> Submit</button>\
+					<button type="button" class="btn btn-sm" data-dismiss="modal"><i class="jeff-icon fa fa-times"></i> Cancel</button>\
+				 </div>\
+				</form>\
+			  </div>\
+			 </div>\
+			</div>';
+			
+			
+			var modal = $(modal);
+			modal.modal("show").on("hidden", function(){
+				modal.remove();
+			});
+	
+			var working = false;
+	
+			var form = modal.find('form:eq(0)');
+			var file = form.find('input[type=file]').eq(0);
+			file.jeff_file_input({
+				style:'well',
+				btn_choose:'点击选择一个新头像',
+				btn_change:null,
+				no_icon:'jeff-icon fa fa-picture-o',
+				thumbnail:'small',
+				before_remove: function() {
+					//don't remove/reset files while being uploaded
+					return !working;
+				},
+				allowExt: ['jpg', 'jpeg', 'png', 'gif'],
+				allowMime: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
+			});
+	
+			form.on('submit', function(){
+				if(!file.data('jeff_input_files')) return false;
+				
+				file.jeff_file_input('disable');
+				form.find('button').attr('disabled', 'disabled');
+				form.find('.modal-body').append("<div class='center'><i class='jeff-icon fa fa-spinner fa-spin bigger-150 orange'></i></div>");
+				
+				var deferred = new $.Deferred;
+				working = true;
+				deferred.done(function() {
+					form.find('button').removeAttr('disabled');
+					form.find('input[type=file]').jeff_file_input('enable');
+					form.find('.modal-body > :last-child').remove();
+					
+					modal.modal("hide");
+	
+					var thumb = file.next().find('img').data('thumb');
+					if(thumb) $('#avatar2').get(0).src = thumb;
+	
+					working = false;
+				});
+				
+				
+				setTimeout(function(){
+					deferred.resolve();
+				} , parseInt(Math.random() * 800 + 800));
+	
+				return false;
+			});
+					
+		});
+	
+		
+	
+		//////////////////////////////
+		$('#profile-feed-1').jeff_scroll({
+			height: '250px',
+			mouseWheelLock: true,
+			alwaysVisible : true
+		});
+	
+		$('a[ data-original-title]').tooltip();
+	
+		$('.easy-pie-chart.percentage').each(function(){
+		var barColor = $(this).data('color') || '#555';
+		var trackColor = '#E2E2E2';
+		var size = parseInt($(this).data('size')) || 72;
+		$(this).easyPieChart({
+			barColor: barColor,
+			trackColor: trackColor,
+			scaleColor: false,
+			lineCap: 'butt',
+			lineWidth: parseInt(size/10),
+			animate:false,
+			size: size
+		}).css('color', barColor);
+		});
+	  
+		///////////////////////////////////////////
+	
+		//right & left position
+		//show the user info on right or left depending on its position
+		$('#user-profile-2 .memberdiv').on('mouseenter touchstart', function(){
+			var $this = $(this);
+			var $parent = $this.closest('.tab-pane');
+	
+			var off1 = $parent.offset();
+			var w1 = $parent.width();
+	
+			var off2 = $this.offset();
+			var w2 = $this.width();
+	
+			var place = 'left';
+			if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) place = 'right';
+			
+			$this.find('.popover').removeClass('right left').addClass(place);
+		}).on('click', function(e) {
+			e.preventDefault();
+		});
+	
+		///////////////////////////////////////////
+		
+		$('.input-mask-phone').mask('(999) 999-9999');
+	
+		$('#user-profile-3').find('input[type=file]').jeff_file_input('show_file_list', [{type: 'image', name: $('#avatar').attr('src')}]);
+	
+	
+		////////////////////
+		//change profile
+		$('[data-toggle="buttons"] .btn').on('click', function(e){
+			var target = $(this).find('input[type=radio]');
+			var which = parseInt(target.val());
+			$('.user-profile').parent().addClass('hide');
+			$('#user-profile-'+which).parent().removeClass('hide');
+		});
+		
+		
+		
+		/////////////////////////////////////
+		$(document).one('ajaxloadstart.page', function(e) {
+			//in ajax mode, remove remaining elements before leaving page
+			try {
+				$('.editable').editable('destroy');
+			} catch(e) {}
+			$('[class*=select2]').remove();
+		});
+		
+		
+		$('#check-email').on(jeff.click_event, function(){
+			var unique_id = $.gritter.add({
+				title: '验证成功!',
+				text: '谢谢您注册！请查收您的邮箱，谢谢',
+				image: '../../assets/avatars/avatar.png',
+				sticky: true,
+				time: '',
+				class_name: 'gritter-info gritter-center gritter-light'
+			});
+	
+			return true;
+		});
+		
+		$('#check-phone').on(jeff.click_event, function(){
+			var unique_id = $.gritter.add({
+				title: '验证成功!',
+				text: '感谢您的验证！',
+				image: '../../assets/avatars/avatar.png',
+				sticky: true,
+				time: '',
+				class_name: 'gritter-info gritter-center gritter-light'
+			});
+	
+			return true;
+		});
+		
+		$('.select2').css('width','200px').select2({allowClear:true})
+		$('#select2-multiple-style .btn').on('click', function(e){
+			var target = $(this).find('input[type=radio]');
+			var which = parseInt(target.val());
+			if(which == 2) $('.select2').addClass('tag-input-style');
+			 else $('.select2').removeClass('tag-input-style');
+		});
+		
+	});
+	
+	
+	});
+</script>

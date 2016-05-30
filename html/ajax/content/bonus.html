@@ -1,0 +1,538 @@
+
+<title>我的积分 - 智选云家</title>
+
+<link rel="stylesheet" href="../../assets/css/jquery-ui.custom.css" />
+<link rel="stylesheet" href="../../assets/css/jquery.gritter.css" />
+
+<style>
+	/* some elements used in demo only */
+	.spinner-preview {
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		margin-top: 60px;
+	}
+	
+	.dropdown-preview {
+		margin: 0 5px;
+		display: inline-block;
+	}
+	.dropdown-preview  > .dropdown-menu {
+		display: block;
+		position: static;
+		margin-bottom: 5px;
+	}
+</style>
+
+<!-- ajax layout which only needs content area -->
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<!-- PAGE CONTENT BEGINS -->
+		<div class="row">
+			<div class="col-sm-12">
+				<!-- #section:elements.tab -->
+				<div class="tabbable">
+
+				<div class="well blue smaller lighter">
+					当前共有积分 200 分 （抵现金2.00元）
+				</div>
+
+					<ul class="nav nav-tabs" id="myTab">
+						<li class="active">
+							<a data-toggle="tab" href="#home">
+								<i class="green jeff-icon fa fa-home bigger-120"></i>
+								积分收入明细
+							</a>
+						</li>
+
+						<li>
+							<a data-toggle="tab" href="#tab2">
+								积分消费记录
+							</a>
+						</li>
+
+						<li>
+							<a data-toggle="tab" href="#tab3">
+								已过期积分
+							</a>
+						</li>
+					</ul>
+
+					<div class="tab-content">
+						<div id="home" class="tab-pane fade in active">
+							<table  class="table  table-bordered table-hover">
+											<thead>
+												<tr>
+													<th>积分变化原因</th>
+													
+													<th class="hidden-480">概述</th>
+													<th>积分数</th>
+													<th>
+														可用积分
+													</th>
+													<th>
+													抵现金
+													</th>
+													<th>
+													时间
+													</th>
+													<th>
+													有效期
+													</th>
+													
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td>
+														登陆
+													</td>
+													<td class="hidden-480">登陆社区中心</td>
+													<td class="text-danger"><b>+25</b></td>
+													<td >20</td>
+													<td >0.20元</td>
+													
+													<td>2012-12-12 </td>
+													<td>2012-12-13 </td>
+
+												</tr>
+
+												<tr>
+
+													<td>
+														个人互动
+													</td>
+													<td class="hidden-480">点评文章</td>
+													<td class="text-danger"><b>+25</b></td>
+													<td >20</td>
+													<td >0.20元</td>
+													
+													<td>2012-12-12 </td>
+													<td>2012-12-16 </td>
+
+												</tr>
+
+											</tbody>
+										</table>
+						</div>
+
+						<div id="tab2" class="tab-pane fade">
+							<table  class="table  table-bordered table-hover">
+											<thead>
+												<tr>
+													<th>积分消费时间</th>
+													
+													<th class="hidden-480">消费方式</th>
+													<th>相关订单号</th>
+													<th>
+														消耗积分
+													</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td>2012-12-12 </td>
+
+													<td>
+														登陆
+													</td>
+													<td >JK123123129</td>
+													<td class="text-danger"><b>-25</b></td>
+													
+
+												</tr>
+
+												<tr>
+													<td>2012-12-12 </td>
+
+													<td>
+														登陆
+													</td>
+													<td >JK123123129</td>
+													<td class="text-danger"><b>-25</b></td>
+													
+
+												</tr>
+												
+											</tbody>
+										</table>
+						</div>
+
+						<div id="tab3" class="tab-pane fade">
+							<table  class="table  table-bordered table-hover">
+											<thead>
+												<tr>
+													<th>积分来源</th>
+													
+													<th >积分数</th>
+													<th>已使用积分</th>
+													<th>
+														过期积分
+													</th>
+													<th>
+														有效日期
+													</th>
+													<th>
+														状态
+													</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td>
+														登陆
+													</td>
+													<td >200</td>
+													<td >20</td>
+													<td >50</td>
+													<td>2012-12-12 </td>
+													<td>已过期 </td>
+												</tr>
+
+												<tr>
+													<td>
+														登陆
+													</td>
+													<td >200</td>
+													<td >20</td>
+													<td >50</td>
+													<td>2012-12-12 </td>
+													<td>已过期 </td>
+												</tr>
+												
+											</tbody>
+										</table>
+						</div>
+
+					</div>
+				</div>
+				<hr/>
+
+				<div class="well green smaller lighter">
+					<b>如何获得积分：</b><br/>
+					1、验证手机可获得积分200分，抵2元订金。<br/>
+					2、验证邮箱可获得积分800分，抵8元订金。<br/>
+					3、预订房屋并完成入住可获得积分奖励。<br/>
+					4、每条有效点评最高可获得积分1000分，抵10元订金。<br/>
+					<b>积分有效期：</b><br/>
+					1、积分有效期：根据不同积分来源，积分的有效期也各不相同，您可以通过积分收入明细中的有效期查看每笔积分的具体有效期。<br/>
+					2、积分入账时间：预订房屋的积分将在您成功结账退房后的7个工作日内到账(极少数房屋可能会晚于7个工作日)；注册、验证、点评等行为产生的积分会在达成条件时实时入账。<br/>
+					<b>积分如何使用：</b><br/>
+					1、途家积分目前可用于抵扣房费(仅线上支付部分，线下支付部分无法使用积分抵扣，海外房订单无法使用积分抵扣)未来积分可换取礼品、参与积分抽大奖等用途。敬请期待。<br/>
+					积分最终解释权归途家所有，规则如有调整将更新在此页面，恕不另行通知。<br/>
+				</div>
+
+
+				<!-- /section:elements.tab -->
+			</div><!-- /.col -->
+
+		</div><!-- /.row -->
+
+		<div class="space"></div>
+		<!-- PAGE CONTENT ENDS -->
+	</div><!-- /.col -->
+</div><!-- /.row -->
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+  <script src="../../assets/js/excanvas.js"></script>
+<![endif]-->
+<script type="text/javascript">
+	var scripts = [null,"../../assets/js/jquery-ui.custom.js","../../assets/js/jquery.ui.touch-punch.js","../../assets/js/bootbox.js","../../assets/js/jquery.easypiechart.js","../../assets/js/jquery.gritter.js","../../assets/js/spin.js", null]
+	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
+	  //inline scripts related to this page
+		 jQuery(function($) {
+		/**
+		$('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		  //console.log(e.target.getAttribute("href"));
+		})
+			
+		$('#accordion').on('shown.bs.collapse', function (e) {
+			//console.log($(e.target).is('#collapseTwo'))
+		});
+		*/
+		
+		$('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+			//if($(e.target).attr('href') == "#home") doSomethingNow();
+		})
+	
+		
+		/**
+			//go to next tab, without user clicking
+			$('#myTab > .active').next().find('> a').trigger('click');
+		*/
+	
+	
+		$('#accordion-style').on('click', function(ev){
+			var target = $('input', ev.target);
+			var which = parseInt(target.val());
+			if(which == 2) $('#accordion').addClass('accordion-style2');
+			 else $('#accordion').removeClass('accordion-style2');
+		});
+		
+		//$('[href="#collapseTwo"]').trigger('click');
+	
+	
+		$('.easy-pie-chart.percentage').each(function(){
+			$(this).easyPieChart({
+				barColor: $(this).data('color'),
+				trackColor: '#EEEEEE',
+				scaleColor: false,
+				lineCap: 'butt',
+				lineWidth: 8,
+				animate: jeff.vars['old_ie'] ? false : 1000,
+				size:75
+			}).css('color', $(this).data('color'));
+		});
+	
+		$('[data-rel=tooltip]').tooltip();
+		$('[data-rel=popover]').popover({html:true});
+	
+	
+		$('#gritter-regular').on(jeff.click_event, function(){
+			$.gritter.add({
+				title: 'This is a regular notice!',
+				text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="blue">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+				image: '../../assets/avatars/avatar1.png', //in jeff demo ../../assets will be replaced by correct assets path
+				sticky: false,
+				time: '',
+				class_name: (!$('#gritter-light').get(0).checked ? 'gritter-light' : '')
+			});
+	
+			return false;
+		});
+	
+		$('#gritter-sticky').on(jeff.click_event, function(){
+			var unique_id = $.gritter.add({
+				title: 'This is a sticky notice!',
+				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="red">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+				image: '../../assets/avatars/avatar.png',
+				sticky: true,
+				time: '',
+				class_name: 'gritter-info' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+			});
+	
+			return false;
+		});
+	
+	
+		$('#gritter-without-image').on(jeff.click_event, function(){
+			$.gritter.add({
+				// (string | mandatory) the heading of the notification
+				title: 'This is a notice without an image!',
+				// (string | mandatory) the text inside the notification
+				text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="orange">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+				class_name: 'gritter-success' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+			});
+	
+			return false;
+		});
+	
+	
+		$('#gritter-max3').on(jeff.click_event, function(){
+			$.gritter.add({
+				title: 'This is a notice with a max of 3 on screen at one time!',
+				text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="green">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+				image: '../../assets/avatars/avatar3.png', //in jeff demo ../../assets will be replaced by correct assets path
+				sticky: false,
+				before_open: function(){
+					if($('.gritter-item-wrapper').length >= 3)
+					{
+						return false;
+					}
+				},
+				class_name: 'gritter-warning' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+			});
+	
+			return false;
+		});
+	
+	
+		$('#gritter-center').on(jeff.click_event, function(){
+			$.gritter.add({
+				title: 'This is a centered notification',
+				text: 'Just add a "gritter-center" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
+				class_name: 'gritter-info gritter-center' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+			});
+	
+			return false;
+		});
+		
+		$('#gritter-error').on(jeff.click_event, function(){
+			$.gritter.add({
+				title: 'This is a warning notification',
+				text: 'Just add a "gritter-light" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
+				class_name: 'gritter-error' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+			});
+	
+			return false;
+		});
+			
+	
+		$("#gritter-remove").on(jeff.click_event, function(){
+			$.gritter.removeAll();
+			return false;
+		});
+			
+	
+		///////
+	
+	
+		$("#bootbox-regular").on(jeff.click_event, function() {
+			bootbox.prompt("What is your name?", function(result) {
+				if (result === null) {
+					
+				} else {
+					
+				}
+			});
+		});
+			
+		$("#bootbox-confirm").on(jeff.click_event, function() {
+			bootbox.confirm("Are you sure?", function(result) {
+				if(result) {
+					//
+				}
+			});
+		});
+		
+	/**
+		$("#bootbox-confirm").on(jeff.click_event, function() {
+			bootbox.confirm({
+				message: "Are you sure?",
+				buttons: {
+				  confirm: {
+					 label: "OK",
+					 className: "btn-primary btn-sm",
+				  },
+				  cancel: {
+					 label: "Cancel",
+					 className: "btn-sm",
+				  }
+				},
+				callback: function(result) {
+					if(result) alert(1)
+				}
+			  }
+			);
+		});
+	**/
+		
+	
+		$("#bootbox-options").on(jeff.click_event, function() {
+			bootbox.dialog({
+				message: "<span class='bigger-110'>I am a custom dialog with smaller buttons</span>",
+				buttons:
+				{
+					"success" :
+					 {
+						"label" : "<i class='jeff-icon fa fa-check'></i> Success!",
+						"className" : "btn-sm btn-success",
+						"callback": function() {
+							//Example.show("great success");
+						}
+					},
+					"danger" :
+					{
+						"label" : "Danger!",
+						"className" : "btn-sm btn-danger",
+						"callback": function() {
+							//Example.show("uh oh, look out!");
+						}
+					}, 
+					"click" :
+					{
+						"label" : "Click ME!",
+						"className" : "btn-sm btn-primary",
+						"callback": function() {
+							//Example.show("Primary button");
+						}
+					}, 
+					"button" :
+					{
+						"label" : "Just a button...",
+						"className" : "btn-sm"
+					}
+				}
+			});
+		});
+	
+	
+	
+		$('#spinner-opts small').css({display:'inline-block', width:'60px'})
+	
+		var slide_styles = ['', 'green','red','purple','orange', 'dark'];
+		var ii = 0;
+		$("#spinner-opts input[type=text]").each(function() {
+			var $this = $(this);
+			$this.hide().after('<span />');
+			$this.next().addClass('ui-slider-small').
+			addClass("inline ui-slider-"+slide_styles[ii++ % slide_styles.length]).
+			css('width','125px').slider({
+				value:parseInt($this.val()),
+				range: "min",
+				animate:true,
+				min: parseInt($this.attr('data-min')),
+				max: parseInt($this.attr('data-max')),
+				step: parseFloat($this.attr('data-step')) || 1,
+				slide: function( event, ui ) {
+					$this.val(ui.value);
+					spinner_update();
+				}
+			});
+		});
+	
+	
+	
+		//CSS3 spinner
+		$.fn.spin = function(opts) {
+			this.each(function() {
+			  var $this = $(this),
+				  data = $this.data();
+	
+			  if (data.spinner) {
+				data.spinner.stop();
+				delete data.spinner;
+			  }
+			  if (opts !== false) {
+				data.spinner = new Spinner($.extend({color: $this.css('color')}, opts)).spin(this);
+			  }
+			});
+			return this;
+		};
+	
+		function spinner_update() {
+			var opts = {};
+			$('#spinner-opts input[type=text]').each(function() {
+				opts[this.name] = parseFloat(this.value);
+			});
+			opts['left'] = 'auto';
+			$('#spinner-preview').spin(opts);
+		}
+	
+	
+	
+		$('#id-pills-stacked').removeAttr('checked').on('click', function(){
+			$('.nav-pills').toggleClass('nav-stacked');
+		});
+	
+		
+		
+		
+		
+		
+		///////////
+		$(document).one('ajaxloadstart.page', function(e) {
+			$.gritter.removeAll();
+			$('.modal').modal('hide');
+		});
+	
+	});
+	});
+</script>

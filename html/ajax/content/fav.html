@@ -1,0 +1,160 @@
+
+<title>我的收藏 - 智选云家</title>
+
+<link rel="stylesheet" href="../../assets/css/colorbox.css" />
+
+<!-- ajax layout which only needs content area -->
+<div class="page-header">
+	
+</div><!-- /.page-header -->
+
+<div class="row">
+	<div class="col-xs-12">
+		<!-- PAGE CONTENT BEGINS -->
+		<div>
+			<ul class="jeff-thumbnails clearfix">
+				<!-- #section:pages/gallery -->
+				
+				<!-- /section:pages/gallery.caption -->
+				<li>
+
+					<a href="../../assets/images/gallery/image-4.jpg" data-rel="colorbox">
+						<img width="300" height="200" alt="300x200" src="../../assets/images/gallery/thumb-4.jpg" />
+						
+					</a>
+
+					<div class="tools tools-top">
+						<a href="#">
+							<i class="jeff-icon fa fa-link"><span style="color:orange"> 立即预订</span></i>
+						</a>
+
+						<a href="javascript:delFav(this)" class="pull-right">
+							<i class="jeff-icon fa fa-times red"></i>
+						</a>
+					</div>
+
+					<div class="tags">
+							<!-- #section:pages/gallery.tags -->
+							<span class="label-holder">
+								<span class="label label-info arrowed">青岛龙港海景酒店豪华全海景大床房</span>
+							</span>
+
+							<span class="label-holder">
+								<span class="label label-danger">标准酒店|1室1卫|1张床|30平米</span>
+							</span>
+
+							<span class="label-holder">
+								<span class="label label-success">¥暂无价格</span>
+							</span>
+
+							<!-- /section:pages/gallery.tags -->
+						</div>
+				</li>
+
+
+				<li>
+
+					<a href="../../assets/images/gallery/image-4.jpg" data-rel="colorbox">
+						<img width="300" height="200" alt="300x200" src="../../assets/images/gallery/thumb-5.jpg" />
+						
+					</a>
+
+					<div class="tools tools-top">
+						<a href="#">
+							<i class="jeff-icon fa fa-link"><span style="color:orange"> 立即预订</span></i>
+						</a>
+
+						<a href="javascript:delFav(this)" class="pull-right">
+							<i class="jeff-icon fa fa-times red"></i>
+						</a>
+					</div>
+
+					<div class="tags">
+							<!-- #section:pages/gallery.tags -->
+							<span class="label-holder">
+								<span class="label label-info arrowed">大连老虎滩激动全海景大床房</span>
+							</span>
+
+							<span class="label-holder">
+								<span class="label label-danger">标准酒店|1室1卫|2张床|40平米</span>
+							</span>
+
+							<span class="label-holder">
+								<span class="label label-success">¥350</span>
+							</span>
+
+							<!-- /section:pages/gallery.tags -->
+						</div>
+				</li>
+				
+
+				
+
+				
+			</ul>
+		</div>
+
+		<!-- PAGE CONTENT ENDS -->
+	</div><!-- /.col -->
+</div><!-- /.row -->
+
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+
+function delFav(obj){
+			bootbox.confirm({
+				message: "您确定删除?",
+				buttons: {
+				  confirm: {
+					 label: "确定",
+					 className: "btn-primary btn-sm",
+				  },
+				  cancel: {
+					 label: "取消",
+					 className: "btn-sm",
+				  }
+				},
+				callback: function(result) {
+					if(result) alert(1)
+				}
+			  }
+			);
+}
+	var scripts = [null,"../../assets/js/jquery.colorbox.js","../../assets/js/bootbox.js", null]
+	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
+	  //inline scripts related to this page
+		 jQuery(function($) {
+	var $overflow = '';
+	var colorbox_params = {
+		rel: 'colorbox',
+		reposition:true,
+		scalePhotos:true,
+		scrolling:false,
+		previous:'<i class="jeff-icon fa fa-arrow-left"></i>',
+		next:'<i class="jeff-icon fa fa-arrow-right"></i>',
+		close:'&times;',
+		current:'{current} of {total}',
+		maxWidth:'100%',
+		maxHeight:'100%',
+		onOpen:function(){
+			$overflow = document.body.style.overflow;
+			document.body.style.overflow = 'hidden';
+		},
+		onClosed:function(){
+			document.body.style.overflow = $overflow;
+		},
+		onComplete:function(){
+			$.colorbox.resize();
+		}
+	};
+
+	$('.jeff-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+	$("#cboxLoadingGraphic").html("<i class='jeff-icon fa fa-spinner orange fa-spin'></i>");//let's add a custom loading icon
+	
+	
+	$(document).one('ajaxloadstart.page', function(e) {
+		$('#colorbox, #cboxOverlay').remove();
+   });
+})
+	});
+</script>

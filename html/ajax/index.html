@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>智选云家</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!--[if !IE]> -->
+		<link rel="stylesheet" href="../../assets/css/pace.css" />
+
+		<script data-pace-options='{ "ajax": true, "document": true, "eventLag": false, "elements": false }' src="../../assets/js/pace.js"></script>
+
+		<!-- <![endif]-->
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="../../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../assets/css/font-awesome.css" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="../../assets/css/jeff-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="../../assets/css/jeff.css" class="jeff-main-stylesheet" id="main-jeff-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="../../assets/css/jeff-part2.css" class="jeff-main-stylesheet" />
+		<![endif]-->
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="../../assets/css/jeff-ie.css" />
+		<![endif]-->
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="../../assets/js/html5shiv.js"></script>
+		<script src="../../assets/js/respond.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="no-skin">
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default          jeff-save-state">
+			<div class="navbar-container jeff-save-state" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="#" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+							&nbsp;智选云家
+						</small>
+					</a>
+
+					<!-- /section:basics/navbar.layout.brand -->
+
+					<!-- #section:basics/navbar.toggle -->
+
+					<!-- /section:basics/navbar.toggle -->
+				</div>
+
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav jeff-nav">
+						
+						<li class="purple">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="jeff-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-important">8</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="jeff-icon fa fa-exclamation-triangle"></i>
+									8 Notifications
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar navbar-pink">
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+														New Comments
+													</span>
+													<span class="pull-right badge badge-info">+12</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<i class="btn btn-xs btn-primary fa fa-user"></i>
+												Bob just signed up as an editor ...
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+														New Orders
+													</span>
+													<span class="pull-right badge badge-success">+8</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+														Followers
+													</span>
+													<span class="pull-right badge badge-info">+11</span>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="#page/message">
+										See all notifications
+										<i class="jeff-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- #section:basics/navbar.user_menu -->
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="../../assets/avatars/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									<small>Welcome,</small>
+									Jason
+								</span>
+
+								<i class="jeff-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+
+								<li>
+									<a href="#page/profile">
+										<i class="jeff-icon fa fa-user"></i>
+										用户信息
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="../login.html">
+										<i class="jeff-icon fa fa-power-off"></i>
+										注销
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- /section:basics/navbar.user_menu -->
+					</ul>
+				</div>
+
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container container" id="main-container">
+			<script type="text/javascript">
+				try{jeff.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<!-- #section:basics/sidebar -->
+			<div id="sidebar" class="sidebar                  responsive                    jeff-save-state">
+				<script type="text/javascript">
+					try{jeff.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+				
+
+				<ul class="nav nav-list">
+
+					<li class="active">
+						<a data-url="page/index" href="#page/index">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> 我的主页 </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+					
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">
+								我的订单
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a data-url="page/order" href="#page/order">
+									<i class="menu-icon fa fa-caret-right"></i>
+									订单管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a data-url="page/reviews" href="#page/reviews">
+									<i class="menu-icon fa fa-caret-right"></i>
+									点评管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							
+						</ul>
+					</li>
+
+					<li class="">
+						<a data-url="page/fav" href="#page/fav">
+							<i class="menu-icon fa fa-tags"></i>
+							<span class="menu-text"> 我的收藏 </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a data-url="page/bonus" href="#page/bonus">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text"> 我的积分 </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a data-url="page/profile" href="#page/profile">
+							<i class="menu-icon fa fa-user"></i>
+							<span class="menu-text"> 用户信息 </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a data-url="page/message" href="#page/message">
+							<i class="menu-icon fa fa-bell"></i>
+							<span class="menu-text"> 消息和通知 </span>
+							<span class="badge badge-primary">5</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+						</ul>
+					</li>
+				</ul><!-- /.nav-list -->
+
+				<!-- #section:basics/sidebar.layout.minimize -->
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="jeff-icon fa fa-angle-double-left jeff-save-state" data-icon1="jeff-icon fa fa-angle-double-left" data-icon2="jeff-icon fa fa-angle-double-right"></i>
+				</div>
+
+				<!-- /section:basics/sidebar.layout.minimize -->
+			</div>
+
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<div class="main-content-inner">
+					<!-- #section:basics/content.breadcrumbs -->
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{jeff.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="jeff-icon fa fa-home home-icon"></i>
+								<a href="#page/index">主页</a>
+							</li>
+						</ul><!-- /.breadcrumb -->
+
+						
+					</div>
+
+					<!-- /section:basics/content.breadcrumbs -->
+					<div class="page-content">
+
+
+						<!-- /section:settings.box -->
+						<div class="page-content-area" data-ajax-content="true">
+							<!-- ajax content goes here -->
+						</div><!-- /.page-content-area -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<!-- #section:basics/footer -->
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">智选云家</span>
+							Application &copy; 2016
+						</span>
+
+						&nbsp; &nbsp;
+						
+					</div>
+
+					<!-- /section:basics/footer -->
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="jeff-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="../../assets/js/jquery.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="../../assets/js/jquery1x.js"></script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='../../assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
+		<script src="../../assets/js/bootstrap.js"></script>
+		<script src="../../assets/js/jeff/elements.colorpicker.js"></script>
+		<!-- jeff scripts -->
+		<script src="../../assets/js/jeff/elements.scroller.js"></script>
+		<script src="../../assets/js/jeff/elements.fileinput.js"></script>
+		<script src="../../assets/js/jeff/elements.typeahead.js"></script>
+		<script src="../../assets/js/jeff/elements.wysiwyg.js"></script>
+		<script src="../../assets/js/jeff/elements.spinner.js"></script>
+		<script src="../../assets/js/jeff/elements.treeview.js"></script>
+		<script src="../../assets/js/jeff/elements.aside.js"></script>
+		<script src="../../assets/js/jeff/jeff.js"></script>
+		<script src="../../assets/js/jeff/jeff.ajax-content.js"></script>
+		<script src="../../assets/js/jeff/jeff.touch-drag.js"></script>
+		<script src="../../assets/js/jeff/jeff.sidebar.js"></script>
+		<script src="../../assets/js/jeff/jeff.sidebar-scroll-1.js"></script>
+		<script src="../../assets/js/jeff/jeff.submenu-hover.js"></script>
+		<script src="../../assets/js/jeff/jeff.widget-box.js"></script>
+
+		<script src="../../assets/js/jeff/jeff.widget-on-reload.js"></script>
+		<script src="../../assets/js/jeff/jeff.searchbox-autocomplete.js"></script>
+	</body>
+</html>
