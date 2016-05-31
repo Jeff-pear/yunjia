@@ -1,0 +1,4 @@
+[
+	{'NoticeID':'12345','NoticeSubject':'title notice','NoticeContent':'notice content','NoticeURL':'http://www.baidu.com','NoticeDate':'2016-05-30'},
+	{'NoticeID':'5243','NoticeSubject':'title notice2','NoticeContent':'notice content2','NoticeURL':'http://www.baidu.com2','NoticeDate':'2016-05-31'}
+]

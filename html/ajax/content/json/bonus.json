@@ -1,0 +1,6 @@
+[
+	{'CreditRecordID':'124632345','CreditRecordType':'0','CreditRecordStatus':'1','CreditDescription':'register user.','CreditPerRecord':120,'CreditStartDate':'2016-04-12',
+	 'CreditEndDate','2016-06-30','UseID':'12123132'},
+	 {'CreditRecordID':'145334533','CreditRecordType':'1','CreditRecordStatus':'1','CreditDescription':'publish resource.','CreditPerRecord':120,'CreditStartDate':'2016-04-12',
+	 'CreditEndDate','2016-06-30','UseID':'12123132'}
+]

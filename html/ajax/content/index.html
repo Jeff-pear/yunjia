@@ -7,16 +7,16 @@
 <div class="row">
 	<div class="col-xs-12">
 		<!-- PAGE CONTENT BEGINS -->
-		
+
 
 		<div class="row">
 			<div class="space-6"></div>
 
-			
+
 			<div class="col-sm-12 infobox-container">
 				<!-- #section:pages/dashboard.infobox -->
-		
-				
+
+
 				<div class="infobox infobox-blue">
 					<div class="infobox-icon">
 						<img class="editable img-responsive" alt="Alex's Avatar" id="avatar2" src="../../assets/avatars/profile-pic.jpg" />
@@ -44,7 +44,7 @@
 					</div>
 					<div class="stat stat-success"></div>
 				</div>
-				
+
 				<div class="infobox infobox-red">
 					<div class="infobox-icon">
 						<i class="jeff-icon fa fa-phone"></i>
@@ -55,7 +55,7 @@
 						<div class="infobox-content">尚未绑定</div>
 					</div>
 				</div>
-				
+
 				<div class="infobox infobox-green">
 					<div class="infobox-icon">
 						<i class="jeff-icon fa fa-envelope"></i>
@@ -72,7 +72,7 @@
 				<!-- /section:pages/dashboard.infobox.dark -->
 			</div>
 
-			
+
 		</div><!-- /.row -->
 
 		<!-- #section:custom/extra.hr -->
@@ -107,7 +107,7 @@
 										<th>
 											<i class="jeff-icon fa fa-caret-right blue"></i>价格
 										</th>
-										
+
 										<th  class="hidden-480">
 											<i class="jeff-icon fa fa-caret-right blue"></i>日期
 										</th>
@@ -120,7 +120,7 @@
 
 								<tbody>
 									<tr>
-										<td>internet.com</td>
+										<td>订单12345678</td>
 
 										<td>
 											<small>
@@ -130,9 +130,9 @@
 										</td>
 
 										<td class="hidden-480">2016-02-12</td>
-										
+
 										<td >
-											<span class="label label-info arrowed-right arrowed-in">on sale</span>
+											<span class="label label-info arrowed-right arrowed-in">待支付</span>
 										</td>
 									</tr>
 
@@ -144,9 +144,9 @@
 										</td>
 
 										<td class="hidden-480">2016-02-12</td>
-										
+
 										<td >
-											<span class="label label-success arrowed-in arrowed-in-right">approved</span>
+											<span class="label label-success arrowed-in arrowed-in-right">服务完成</span>
 										</td>
 									</tr>
 
@@ -158,9 +158,9 @@
 										</td>
 
 										<td class="hidden-480">2016-02-12</td>
-										
+
 										<td >
-											<span class="label label-danger arrowed">pending</span>
+											<span class="label label-danger arrowed">服务中</span>
 										</td>
 									</tr>
 
@@ -175,10 +175,10 @@
 										</td>
 
 										<td class="hidden-480">2016-02-17</td>
-										
+
 										<td>
 											<span class="label arrowed">
-												<s>out of stock</s>
+												<s>订单关闭</s>
 											</span>
 										</td>
 									</tr>
@@ -191,9 +191,9 @@
 										</td>
 
 										<td class="hidden-480">2016-02-14</td>
-										
+
 										<td >
-											<span class="label label-warning arrowed arrowed-right">SOLD</span>
+											<span class="label label-warning arrowed arrowed-right">已评分</span>
 										</td>
 									</tr>
 								</tbody>
@@ -207,7 +207,7 @@
 
 		<div class="hr hr32 hr-dotted"></div>
 
-		
+
 
 		<!-- PAGE CONTENT ENDS -->
 	</div><!-- /.col -->
@@ -223,54 +223,54 @@
 	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
 	  //inline scripts related to this page
 		 jQuery(function($) {
-		
-	
+
+
 		/////////////////////////////////////
 		$(document).one('ajaxloadstart.page', function(e) {
 			//$tooltip.remove();
 		});
-	
-	
-	
-	
+
+
+
+
 		var d1 = [];
 		for (var i = 0; i < Math.PI * 2; i += 0.5) {
 			d1.push([i, Math.sin(i)]);
 		}
-	
+
 		var d2 = [];
 		for (var i = 0; i < Math.PI * 2; i += 0.5) {
 			d2.push([i, Math.cos(i)]);
 		}
-	
+
 		var d3 = [];
 		for (var i = 0; i < Math.PI * 2; i += 0.2) {
 			d3.push([i, Math.tan(i)]);
 		}
-		
-	
-	
-	
+
+
+
+
 		$('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
 		function tooltip_placement(context, source) {
 			var $source = $(source);
 			var $parent = $source.closest('.tab-content')
 			var off1 = $parent.offset();
 			var w1 = $parent.width();
-	
+
 			var off2 = $source.offset();
 			//var w2 = $source.width();
-	
+
 			if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
 			return 'left';
 		}
-	
-	
+
+
 		$('.dialogs,.comments').jeff_scroll({
 			size: 300
 	    });
-		
-		
+
+
 		//Android's default browser somehow is confused when tapping on label which will lead to dragging the task
 		//so disable dragging when clicking on label
 		var agent = navigator.userAgent.toLowerCase();
@@ -282,7 +282,7 @@
 			if(label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation() ;
 		  });
 		}
-	
+
 		$('#tasks').sortable({
 			opacity:0.8,
 			revert:true,
@@ -301,19 +301,19 @@
 			if(this.checked) $(this).closest('li').addClass('selected');
 			else $(this).closest('li').removeClass('selected');
 		});
-	
-	
+
+
 		//show the dropdowns on top or bottom depending on window height and menu position
 		$('#task-tab .dropdown-hover').on('mouseenter', function(e) {
 			var offset = $(this).offset();
-	
+
 			var $w = $(window)
-			if (offset.top > $w.scrollTop() + $w.innerHeight() - 100) 
+			if (offset.top > $w.scrollTop() + $w.innerHeight() - 100)
 				$(this).addClass('dropup');
 			else $(this).removeClass('dropup');
 		});
-	
+
 	})
-	
+
 	});
 </script>

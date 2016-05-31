@@ -1,0 +1,8 @@
+{
+'UserMail':'testRegister@qq.com',
+'UserLoginName':'test123',
+'UserPassword':'test123',
+'UserStatus':2,
+'UserType':0,
+'UserIPAddress':'10.12.123.45'
+}
