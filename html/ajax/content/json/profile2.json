@@ -1,0 +1,21 @@
+{
+	'UserID':'1234523',
+	'UserLoginName':'test123',
+	'UserStatus':1,
+	'UserRole':2,
+	'UserName':'test_ fff',
+	'UserMail':'test@qq.com',
+	'UserMobile':'13522234223',
+	'UserPaperType':'0',
+	'UserPaperID':'23123123438219482233',
+	'UserImage':'D:/programe/test.jpg',
+	'UserSex':0,
+	'UserBorthDay':'2010-12-12',
+	'UserCityNowID':'DaLian',
+	'UserExpiresHours':0,
+	'UserCredits':120,
+	'UserFavoriteList':'121213123',
+	'UserRegisteDate':'2015-12-12 12:20:02',
+	'UserLastLoginDate':'2016-01-12 12:20:02'
+	
+}
