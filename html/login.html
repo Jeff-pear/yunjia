@@ -67,7 +67,7 @@
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="用户" >
+															<input type="text" class="form-control" placeholder="用户" name="UserLoginName" >
 															<i class="jeff-icon fa fa-user"></i>
 														</input>
 														</span>
@@ -75,7 +75,7 @@
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="密码" />
+															<input type="password" class="form-control" placeholder="密码" name="UserPassword" />
 															<i class="jeff-icon fa fa-lock"></i>
 														</span>
 													</label>
@@ -175,28 +175,28 @@
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="邮箱" />
+															<input type="email" class="form-control" placeholder="邮箱" name="UserMail" />
 															<i class="jeff-icon fa fa-envelope"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="用户" />
+															<input type="text" class="form-control" placeholder="用户" name="UserLoginName" />
 															<i class="jeff-icon fa fa-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="密码" />
+															<input type="password" class="form-control" placeholder="密码" name="UserPassword" />
 															<i class="jeff-icon fa fa-lock"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="确认密码" />
+															<input type="password" class="form-control" placeholder="确认密码" name="UserPasswordConfirm" />
 															<i class="jeff-icon fa fa-retweet"></i>
 														</span>
 													</label>
@@ -217,7 +217,7 @@
 															<span class="bigger-110">重置</span>
 														</button>
 
-														<button type="button" class="width-65 pull-right btn btn-sm btn-success">
+														<button type="button" class="width-65 pull-right btn btn-sm btn-success" onClick="register();">
 															<span class="bigger-110">注册</span>
 
 															<i class="jeff-icon fa fa-arrow-right icon-on-right"></i>
@@ -273,6 +273,7 @@
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
+
 			jQuery(function($) {
 			 $(document).on('click', '.toolbar a[data-target]', function(e) {
 				e.preventDefault();

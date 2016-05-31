@@ -1,0 +1,4 @@
+[
+	{'MessageID':'12345','MessageSubject':'title msg','MessageContent':'notice33 content','MessageURL':'http://www.baidu.com','MessageDate':'2016-05-30','MessageSenderID':'12313','MessageSenderName':'342'},
+	{'MessageID':'5243','MessageSubject':'title msg2','MessageContent':'notice11 content2','MessageURL':'http://www.baidu.com2','MessageDate':'2016-05-31','MessageSenderID':'333','MessageSenderName':'123'}
+]

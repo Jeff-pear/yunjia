@@ -1,0 +1,12 @@
+{
+	'UserName':'test123',
+	'UserCredits':120,
+	'UserMobile':'13812321112',
+	'UserMail':'test2@qq.com',
+	'pendingOrder': [
+		{'ServiceOrderID':'dd1234567','HouseID':'fang123','HouseOrderID':'12345','ShopID':'333','OrderSubject':'order_test','OrderStatus':0,'OrderType':'0',
+		 'ServiceStartDate':'2016-05-28','ServiceEndDate':'2016-05-29','TotalSeviceTime':24,'OrderScore':20,'OrderCredits':10,'OrderDate':'2016-05-27'},
+		 {'ServiceOrderID':'dd7654321','HouseID':'fang321','HouseOrderID':'54321','ShopID':'444','OrderSubject':'order_ddd','OrderStatus':0,'OrderType':'0',
+		 'ServiceStartDate':'2016-05-28','ServiceEndDate':'2016-05-29','TotalSeviceTime':12,'OrderScore':210,'OrderCredits':110,'OrderDate':'2016-05-27'}
+	]
+}
