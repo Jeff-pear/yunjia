@@ -410,11 +410,13 @@
 				$.ajax({
 					type: 'post',
 					url:'http://210.83.195.229:90/api/loginapi/CheckUserLoginName',
-					data:{name:$('#registerUserLoginName').val()},
+					data:{UserLoginName:$('#registerUserLoginName').val()},
 					async: false,
 					success: function(result){
+
+						alertMsg('用户名验证',result.Message)
 debugger;
-						if(result && $('#registerForm').valid()){
+						if(result.Code==1 && $('#registerForm').valid()){
 							var data = {};
 							var dataArr = $('#registerForm').serializeArray();
 							dataArr.forEach(function(d){data[d['name']] = d['value']});
@@ -447,21 +449,24 @@ debugger;
 						if(data.Code == 1){
 							$('#back-to-index').get(0).click();
 						}else{
-							$.gritter.add({
-							    title: '登陆失败',
-							    text: data.Message,
-							    image:'../assets/avatars/avatar.png',
-							    sticky: false,
-							    time: 1000,
-							    speed:500,
-							    position: 'bottom-right',
-							    class_name: 'gritter-error gritter-error'//gritter-center
-							});
+							alertMsg('登陆失败',data.Message);
 						}
 					}}
 				)
 			});
 
+			function alertMsg(title,msg){
+				$.gritter.add({
+						title: title,
+						text: msg,
+						image:'../assets/avatars/avatar.png',
+						sticky: false,
+						time: 1000,
+						speed:500,
+						position: 'bottom-right',
+						class_name: 'gritter error'//gritter-center
+				});
+			}
 		</script>
 	</body>
 </html>
