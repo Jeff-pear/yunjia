@@ -22,6 +22,7 @@
 			<link rel="stylesheet" href="../assets/css/jeff-part2.css" />
 		<![endif]-->
 		<link rel="stylesheet" href="../assets/css/jeff-rtl.css" />
+		<link rel="stylesheet" href="../assets/css/jquery.gritter.css" />
 
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="../assets/css/jeff-ie.css" />
@@ -54,6 +55,7 @@
 
 							<div class="position-relative">
 								<div id="login-box" class="login-box visible widget-box no-border">
+
 									<div class="widget-body">
 										<div class="widget-main">
 											<h4 class="header blue lighter bigger">
@@ -179,7 +181,7 @@
 															<i class="jeff-icon fa fa-envelope"></i>
 														</span>
 													</label>
-													
+
 													<label class="block clearfix form-group has-info">
 														<span class="block input-icon input-icon-right">
 															<input type="text" class="form-control" placeholder="手机" name="UserMobile" />
@@ -266,6 +268,12 @@
 			</div><!-- /.main-content -->
 		</div><!-- /.main-container -->
 
+<div class="hide">
+	<a href="../html/ajax/#page/index" id="back-to-index" >
+
+		返回首页
+	</a>
+</div>
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
@@ -279,6 +287,7 @@
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
 			document.write("<script src='../assets/js/jquery.validate.js'>"+"<"+"/script>");
+			document.write("<script src='../assets/js/jquery.gritter.js'>"+"<"+"/script>");
 		</script>
 
 		<!-- inline scripts related to this page -->
@@ -321,11 +330,11 @@
 
 			 $('#btn-login-blur').click();
 			});
-			
+
 			jQuery.validator.addMethod("phone", function (value, element) {
 				return this.optional(element) || /^(13[0-9]|14[0-9]|15[0-9]|18[0-9])\d{8}$/.test(value);
 			}, "Enter a valid phone number.");
-			
+
 			$('#registerForm').validate({
 					errorElement: 'div',
 					errorClass: 'help-block',
@@ -353,7 +362,7 @@
 							phone: 'required'
 						}
 					},
-			
+
 					messages: {
 						UserMail: {
 							required: "<span class='red'>Please enter email.</span>",
@@ -364,17 +373,17 @@
 							minlength: "Please specify a secure password."
 						}
 					},
-			
-			
+
+
 					highlight: function (e) {
 						$(e).closest('.form-group').removeClass('has-info').addClass('has-error');
 					},
-			
+
 					success: function (e) {
 						$(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
 						$(e).remove();
 					},
-			
+
 					errorPlacement: function (error, element) {
 						if(element.is('input[type=checkbox]') || element.is('input[type=radio]')) {
 							var controls = element.closest('div[class*="col-"]');
@@ -389,22 +398,22 @@
 						}
 						else error.insertAfter(element.parent());
 					},
-			
+
 					submitHandler: function (form) {
 					},
 					invalidHandler: function (form) {
 					}
 				});
-				
+
 			$('#registerBtn').on('click', function(){
-			
+
 				$.ajax({
 					type: 'post',
 					url:'http://210.83.195.229:90/api/loginapi/CheckUserLoginName',
 					data:{name:$('#registerUserLoginName').val()},
-					async: false, 
+					async: false,
 					success: function(result){
-					
+debugger;
 						if(result && $('#registerForm').valid()){
 							var data = {};
 							var dataArr = $('#registerForm').serializeArray();
@@ -414,43 +423,45 @@
 								type: 'post',
 								url:'http://210.83.195.229:90/api/loginapi/Register',
 								data:data,
-								async: false, 
+								async: false,
 								success: function(data){
-									console.log(data);
+									$('#back-to-index').get(0).click();
 								}}
 							)
 						}
 					}}
 				)
 			});
-			
+
 			$('#loginBtn').on('click', function(){
-			
+
+				var data = {};
+				var dataArr = $('#loginForm').serializeArray();
+				dataArr.forEach(function(d){data[d['name']] = d['value']});
 				$.ajax({
 					type: 'post',
 					url:'http://210.83.195.229:90/api/loginapi/Login',
-					data:{name:$('#registerUserLoginName').val()},
-					async: false, 
-					success: function(result){
-					
-							var data = {};
-							var dataArr = $('#loginForm').serializeArray();
-							dataArr.forEach(function(d){data[d['name']] = d['value']});
-							console.log(data);
-							$.ajax({
-								type: 'post',
-								url:'http://210.83.195.229:90/api/loginapi/Register',
-								data:data,
-								async: false, 
-								success: function(data){
-									console.log(data);
-								}}
-							)
-						
+					data:data,
+					async: false,
+					success: function(data){
+						if(data.Code == 1){
+							$('#back-to-index').get(0).click();
+						}else{
+							$.gritter.add({
+							    title: '登陆失败',
+							    text: data.Message,
+							    image:'../assets/avatars/avatar.png',
+							    sticky: false,
+							    time: 1000,
+							    speed:500,
+							    position: 'bottom-right',
+							    class_name: 'gritter-error gritter-error'//gritter-center
+							});
+						}
 					}}
 				)
 			});
-			
+
 		</script>
 	</body>
 </html>
