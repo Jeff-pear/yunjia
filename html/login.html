@@ -171,36 +171,44 @@
 											<div class="space-6"></div>
 											<p> 请输入您的信息: </p>
 
-											<form>
+											<form id="registerForm">
 												<fieldset>
-													<label class="block clearfix">
+													<label class="block clearfix form-group has-info">
 														<span class="block input-icon input-icon-right">
 															<input type="email" class="form-control" placeholder="邮箱" name="UserMail" />
 															<i class="jeff-icon fa fa-envelope"></i>
 														</span>
 													</label>
-
-													<label class="block clearfix">
+													
+													<label class="block clearfix form-group has-info">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="用户" name="UserLoginName" />
+															<input type="text" class="form-control" placeholder="手机" name="UserMobile" />
+															<i class="jeff-icon fa fa-phone"></i>
+														</span>
+													</label>
+
+													<label class="block clearfix form-group has-info">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control" placeholder="用户" id="registerUserLoginName" name="UserLoginName" />
 															<i class="jeff-icon fa fa-user"></i>
 														</span>
 													</label>
 
-													<label class="block clearfix">
+													<label class="block clearfix form-group has-info">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="密码" name="UserPassword" />
+															<input type="password" class="form-control" placeholder="密码" id="UserPassword" name="UserPassword" />
 															<i class="jeff-icon fa fa-lock"></i>
 														</span>
 													</label>
 
-													<label class="block clearfix">
+													<label class="block clearfix form-group has-info">
 														<span class="block input-icon input-icon-right">
 															<input type="password" class="form-control" placeholder="确认密码" name="UserPasswordConfirm" />
 															<i class="jeff-icon fa fa-retweet"></i>
 														</span>
 													</label>
 
+													<!--
 													<label class="block">
 														<input type="checkbox" class="jeff" />
 														<span class="lbl">
@@ -209,6 +217,7 @@
 														</span>
 													</label>
 
+													-->
 													<div class="space-24"></div>
 
 													<div class="clearfix">
@@ -217,7 +226,7 @@
 															<span class="bigger-110">重置</span>
 														</button>
 
-														<button type="button" class="width-65 pull-right btn btn-sm btn-success" onClick="register();">
+														<button type="button" id="registerBtn" class="width-65 pull-right btn btn-sm btn-success">
 															<span class="bigger-110">注册</span>
 
 															<i class="jeff-icon fa fa-arrow-right icon-on-right"></i>
@@ -269,6 +278,7 @@
 <![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
+			document.write("<script src='../assets/js/jquery.validate.js'>"+"<"+"/script>");
 		</script>
 
 		<!-- inline scripts related to this page -->
@@ -311,6 +321,135 @@
 
 			 $('#btn-login-blur').click();
 			});
+			
+			jQuery.validator.addMethod("phone", function (value, element) {
+				return this.optional(element) || /^(13[0-9]|14[0-9]|15[0-9]|18[0-9])\d{8}$/.test(value);
+			}, "Enter a valid phone number.");
+			
+			$('#registerForm').validate({
+					errorElement: 'div',
+					errorClass: 'help-block',
+					focusInvalid: true,
+					ignore: "",
+					rules: {
+						UserMail: {
+							required: true,
+							email:true
+						},
+						UserPassword: {
+							required: true,
+							minlength: 5
+						},
+						UserPasswordConfirm: {
+							required: true,
+							minlength: 5,
+							equalTo: "#UserPassword"
+						},
+						UserLoginName: {
+							required: true
+						},
+						UserMobile: {
+							required: true,
+							phone: 'required'
+						},
+						url: {
+							required: true,
+							url: true
+						},
+						comment: {
+							required: true
+						},
+						state: {
+							required: true
+						},
+						platform: {
+							required: true
+						},
+						subscription: {
+							required: true
+						},
+						gender: {
+							required: true,
+						},
+						agree: {
+							required: true,
+						}
+					},
+			
+					messages: {
+						UserMail: {
+							required: "<span class='red'>Please enter email.</span>",
+							UserMail: "Please provide a valid email."
+						},
+						UserPassword: {
+							required: "Please specify a password.",
+							minlength: "Please specify a secure password."
+						},
+						state: "Please choose state",
+						subscription: "Please choose at least one option",
+						gender: "Please choose gender",
+						agree: "Please accept our policy"
+					},
+			
+			
+					highlight: function (e) {
+						$(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+					},
+			
+					success: function (e) {
+						$(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
+						$(e).remove();
+					},
+			
+					errorPlacement: function (error, element) {
+						if(element.is('input[type=checkbox]') || element.is('input[type=radio]')) {
+							var controls = element.closest('div[class*="col-"]');
+							if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+							else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+						}
+						else if(element.is('.select2')) {
+							error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+						}
+						else if(element.is('.chosen-select')) {
+							error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+						}
+						else error.insertAfter(element.parent());
+					},
+			
+					submitHandler: function (form) {
+					},
+					invalidHandler: function (form) {
+					}
+				});
+				
+			$('#registerBtn').on('click', function(){
+			
+				$.ajax({
+					type: 'post',
+					url:'http://210.83.195.229:90/api/loginapi/CheckUserLoginName',
+					data:{name:$('#registerUserLoginName').val()},
+					async: false, 
+					success: function(result){
+					
+						if(result && $('#registerForm').valid()){
+							var data = {};
+							var dataArr = $('#registerForm').serializeArray();
+							dataArr.forEach(function(d){data[d['name']] = d['value']});
+							console.log(data);
+							$.ajax({
+								type: 'post',
+								url:'http://210.83.195.229:90/api/loginapi/Register',
+								data:data,
+								async: false, 
+								success: function(data){
+									console.log(data);
+								}}
+							)
+						}
+					}}
+				)
+			})
+			
 		</script>
 	</body>
 </html>
