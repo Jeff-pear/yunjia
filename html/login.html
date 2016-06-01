@@ -63,7 +63,7 @@
 
 											<div class="space-6"></div>
 
-											<form>
+											<form id="loginForm">
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
@@ -88,7 +88,7 @@
 															<span class="lbl"> 记住我</span>
 														</label>
 
-														<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+														<button type="button" id="loginBtn" class="width-35 pull-right btn btn-sm btn-primary">
 															<i class="jeff-icon fa fa-key"></i>
 															<span class="bigger-110">登录</span>
 														</button>
@@ -351,28 +351,6 @@
 						UserMobile: {
 							required: true,
 							phone: 'required'
-						},
-						url: {
-							required: true,
-							url: true
-						},
-						comment: {
-							required: true
-						},
-						state: {
-							required: true
-						},
-						platform: {
-							required: true
-						},
-						subscription: {
-							required: true
-						},
-						gender: {
-							required: true,
-						},
-						agree: {
-							required: true,
 						}
 					},
 			
@@ -384,11 +362,7 @@
 						UserPassword: {
 							required: "Please specify a password.",
 							minlength: "Please specify a secure password."
-						},
-						state: "Please choose state",
-						subscription: "Please choose at least one option",
-						gender: "Please choose gender",
-						agree: "Please accept our policy"
+						}
 					},
 			
 			
@@ -448,7 +422,34 @@
 						}
 					}}
 				)
-			})
+			});
+			
+			$('#loginBtn').on('click', function(){
+			
+				$.ajax({
+					type: 'post',
+					url:'http://210.83.195.229:90/api/loginapi/Login',
+					data:{name:$('#registerUserLoginName').val()},
+					async: false, 
+					success: function(result){
+					
+							var data = {};
+							var dataArr = $('#loginForm').serializeArray();
+							dataArr.forEach(function(d){data[d['name']] = d['value']});
+							console.log(data);
+							$.ajax({
+								type: 'post',
+								url:'http://210.83.195.229:90/api/loginapi/Register',
+								data:data,
+								async: false, 
+								success: function(data){
+									console.log(data);
+								}}
+							)
+						
+					}}
+				)
+			});
 			
 		</script>
 	</body>
