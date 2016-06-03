@@ -354,21 +354,67 @@ function showDetailAlink(obj){
 				 data:{UserID:5},
 				 async: false,
 				 success: function(data){
-					 debugger;
+					debugger;
+					$('#orderDataList tbody').append('<tr><td class="center"><div class="action-buttons">'+
+															'<a href="#" class="green bigger-140 show-details-btn" title="Show Details">'+
+																'<i class="jeff-icon fa fa-angle-double-down"></i>'+
+																'<span class="sr-only">Details</span></a>'+
+															'</div></td>'+
+													'<td><a onClick="showDetailAlink(this)">JK2333012122</a></td>'+
+													'<td>$45</td>'+
+													'<td class="hidden-480">大连市沙河口区联合路123号－1</td>'+
+													'<td>2012-12-12</td>'+
 
-					 $('#orderDataList').DataTable( {
-					     data: data,
-							 "processing": true,
-					      "serverSide": true,
-					      "ajax" : "load",
-					     columns: [
-					         { data: 'HouseID' },
-					         { data: 'HouseOrderID' },
-					         { data: 'ServiceEndDate' },
-					         { data: 'ServiceStartDate' },
-					         { data: 'TotalSeviceTime' }
-					     ]
-					 } );
+													'<td class="hidden-480">'+
+														'<span class="label label-sm label-warning">等待确认</span>'+
+													'</td>'+
+													'<td>'+
+														'<div class="hidden-sm hidden-xs btn-group">'+
+															'<button class="btn btn-xs btn-success"><i class="jeff-icon fa fa-close bigger-120"></i>取消</button>'+
+															
+															'<button class="btn btn-xs btn-info"><i class="jeff-icon fa fa-pencil bigger-120"></i>留言</button>'+
+
+															'<button class="btn btn-xs btn-danger"><i class="jeff-icon fa fa-trash-o bigger-120"></i>删除</button>'+
+
+															'<button class="btn btn-xs btn-warning"><i class="jeff-icon fa fa-flag bigger-120"></i>收藏</button>'+
+														'</div>+'
+
+														'<div class="hidden-md hidden-lg">+'
+															'<div class="inline pos-rel">+'
+																'<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">+'
+																	'<i class="jeff-icon fa fa-cog icon-only bigger-110"></i>+'
+																'</button>+'
+
+																'<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">+'
+																	'<li>+'
+																		'<a href="#" class="tooltip-info" data-rel="tooltip" title="View">+'
+																			'<span class="blue">+'
+																				'<i class="jeff-icon fa fa-search-plus bigger-120"></i>+'
+																			'</span>+'
+																		'</a>+'
+																	'</li>+'
+
+																	'<li>+'
+																		'<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">+'
+																			'<span class="green">+'
+																				'<i class="jeff-icon fa fa-pencil-square-o bigger-120"></i>+'
+																			'</span>+'
+																		'</a>+'
+																	'</li>+'
+
+																	'<li>+'
+																		'<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">+'
+																			'<span class="red">+'
+																				'<i class="jeff-icon fa fa-trash-o bigger-120"></i>+'
+																			'</span>+'
+																		'</a>+'
+																	'</li>+'
+																'</ul>+'
+															'</div>+'
+														'</div>+'
+													'</td>+'
+												'</tr>')
+					 
 				 }
 			 })
 
