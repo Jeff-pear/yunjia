@@ -1,6 +1,5 @@
 
 <title>点评管理 - 智选云家</title>
-
 <!-- ajax layout which only needs content area -->
 <div class="page-header">
 	<h1>
@@ -11,8 +10,6 @@
 		</small>
 	</h1>
 </div><!-- /.page-header -->
-
-
 		<div class="row">
 			<div class="widget-box transparent" id="recent-box">
 
@@ -36,50 +33,33 @@
 						<div class="widget-main padding-4">
 							<div class="tab-content padding-8">
 								<div id="unreviews-tab" class="tab-pane active">
-
 									<!-- #section:pages/dashboard.tasks -->
-
 									<table id="simple-table1" class="table  table-bordered table-hover">
 											<thead>
 												<tr>
-
 													<th>订单号</th>
-
 													<th class="hidden-480">地址</th>
-
 													<th>操作</th>
 												</tr>
 											</thead>
-
 											<tbody>
 												<tr>
-
 													<td>
 														JK2333012122
 													</td>
 													<td class="hidden-480">大连市沙河口区联合路123号－1</td>
-
-
 													<td>
 														<div class="hidden-sm hidden-xs btn-group">
 																<a href="#page/reviews_detail" class="btn btn-xs btn-info">
 																	<i class="jeff-icon fa fa-pencil bigger-120 "></i>
 																	立即点评
 																</a>
-
-															<!-- <button class="btn btn-xs btn-danger">
-																<i class="jeff-icon fa fa-trash-o bigger-120"></i>
-																删除
-															</button> -->
-
 														</div>
-
 														<div class="hidden-md hidden-lg">
 															<div class="inline pos-rel">
 																<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
 																	<i class="jeff-icon fa fa-cog icon-only bigger-110"></i>
 																</button>
-
 																<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 																	<li>
 																		<a href="#" class="tooltip-info" data-rel="tooltip" title="立即点评">
@@ -88,49 +68,28 @@
 																			</span>
 																		</a>
 																	</li>
-
-																	<!-- <li>
-																		<a href="#" class="tooltip-error" data-rel="tooltip" title="删除">
-																			<span class="red">
-																				<i class="jeff-icon fa fa-trash-o bigger-120"></i>
-																			</span>
-																		</a>
-																	</li> -->
 																</ul>
 															</div>
 														</div>
 													</td>
 												</tr>
-
 												<tr>
-
-
 													<td>
 														jk13314234234234
 													</td>
-
 													<td class="hidden-480">2,595</td>
-
-
 													<td>
 														<div class="hidden-sm hidden-xs btn-group">
 															<a href="#page/reviews-detail" class="btn btn-xs btn-info">
 																<i class="jeff-icon fa fa-pencil bigger-120"></i>
 																立即点评
 															</a>
-
-															<!-- <button class="btn btn-xs btn-danger">
-																<i class="jeff-icon fa fa-trash-o bigger-120"></i>
-																删除
-															</button> -->
 														</div>
-
 														<div class="hidden-md hidden-lg">
 															<div class="inline pos-rel">
 																<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
 																	<i class="jeff-icon fa fa-cog icon-only bigger-110"></i>
 																</button>
-
 																<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 																	<li>
 																		<a href="#" class="tooltip-info" data-rel="tooltip" title="立即点评">
@@ -139,14 +98,11 @@
 																			</span>
 																		</a>
 																	</li>
-
 																</ul>
 															</div>
 														</div>
 													</td>
 												</tr>
-
-
 											</tbody>
 										</table>
 
@@ -196,7 +152,7 @@
 													<td class="text-danger"><b>+20</b></td>
 													<td>2016-04-12</td>
 
-												
+
 												</tr>
 
 
@@ -222,6 +178,19 @@
 
 	var scripts = [null,"", null]
 	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
+
+		$.ajax({
+		 type: 'get',
+		 url:'http://210.83.195.229:90/api/OrderAPI/getReviewList',
+		 data:{UserID:5},
+		 async: false,
+		 success: function(data){
+			 debugger;
+
+
+		 }
+		});
+
 	  //inline scripts related to this page
 		 jQuery(function($) {
 

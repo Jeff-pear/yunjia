@@ -23,7 +23,7 @@
 					</div>
 
 					<div class="infobox-data">
-						<span class="infobox-data-number">李凤翔
+						<span class="infobox-data-number"><span id="UserName"></span>
 						<a class="btn btn-minier btn-primary" data-url="page/profile" href="#page/profile">
 							修改资料
 						</a>
@@ -40,7 +40,7 @@
 
 					<div class="infobox-data">
 						<span class="infobox-data-number"><a data-url="page/bonus" href="#page/bonus">积分</a></span>
-						<div class="infobox-content">12分</div>
+						<div class="infobox-content" ><span id="UserCredits"></span>分</div>
 					</div>
 					<div class="stat stat-success"></div>
 				</div>
@@ -52,7 +52,7 @@
 
 					<div class="infobox-data">
 						<span class="infobox-data-number">手机号</span>
-						<div class="infobox-content">尚未绑定</div>
+						<div class="infobox-content"><span id="UserMobile"></span></div>
 					</div>
 				</div>
 
@@ -63,7 +63,7 @@
 
 					<div class="infobox-data">
 						<span class="infobox-data-number">邮箱</span>
-						<div class="infobox-content">尚未绑定</div>
+						<div class="infobox-content"><span id="UserMail"></span></div>
 					</div>
 
 				</div>
@@ -223,11 +223,25 @@
 	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
 	  //inline scripts related to this page
 		 jQuery(function($) {
+			 $.ajax({
+			 	type: 'post',
+			 	url:'http://210.83.195.229:90/api/IndexAPI/index',
+			 	data:{UserID:5},
+			 	async: false,
+			 	success: function(data){
+			 		debugger;
+					$('#UserCredits').html(data.UserCredits);
+					$('#UserMail').html(data.UserMail);
+					$('#UserName').html(data.UserName);
+					$('#UserMobile').html(data.UserMobile);
 
+			 	}
+			 });
 
 		/////////////////////////////////////
 		$(document).one('ajaxloadstart.page', function(e) {
 			//$tooltip.remove();
+
 		});
 
 
