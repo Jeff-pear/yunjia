@@ -36,6 +36,41 @@
 										</table>
 									</div><!-- /.span -->
 								</div><!-- /.row -->
+
+								<div class="row" id="pageTools">
+								    <div class="col-xs-6">
+								        <div class="dataTables_info" id="dynamic-table_info" role="status" aria-live="polite">
+								            显示第<span><span>－<span></span>条数据， 共<span id="total"></span>条
+								            <span class="select-info">
+												<span class="select-item"></span>
+								            <span class="select-item"></span>
+								            <span class="select-item"></span>
+								            </span>
+								        </div>
+								    </div>
+								    <div class="col-xs-6">
+								        <div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">
+								            <ul class="pagination">
+								                <li class="paginate_button previous disabled" aria-controls="dynamic-table" tabindex="0" id="dynamic-table_previous">
+								                    <a href="#page/order?2">上一页</a>
+								                </li>
+								                <li class="paginate_button active" aria-controls="dynamic-table" tabindex="0">
+								                    <a href="#page/order?2">1</a>
+								                </li>
+								                <li class="paginate_button " aria-controls="dynamic-table" tabindex="0">
+								                    <a href="#page/order?2">2</a>
+								                </li>
+								                <li class="paginate_button " aria-controls="dynamic-table" tabindex="0">
+								                    <a href="#page/order?2">3</a>
+								                </li>
+								                <li class="paginate_button next" aria-controls="dynamic-table" tabindex="0" id="dynamic-table_next">
+								                    <a href="#">下一页</a>
+								                </li>
+								            </ul>
+								        </div>
+								    </div>
+								</div>
+
 								<div class="hr hr-18 dotted hr-double"></div>
 								</div>
 								<!-- PAGE CONTENT ENDS -->
@@ -57,10 +92,14 @@ function showDetailAlink(obj){
 			 $.ajax({
 				 type: 'get',
 				 url:'http://210.83.195.229:90/api/OrderAPI/getOrderList',
-				 data:{UserID:5},
+				 data:{UserID:5,OrderStatus:-1,rows:10,page:1},
 				 async: false,
-				 success: function(data){
+				 success: function(result){
+
+				 	$('#pageTools #total').html(result.total);
+
 					 debugger;
+					 var data = result.rows;
 						for(var i = 0 ; i < data.length ; i++){
 							var sData = data[i];
 
