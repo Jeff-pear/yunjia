@@ -1,3 +1,5 @@
 [
-	{'ServiceOrderID':'dd1234567','HouseID':'fang123','HouseOrderID':'12345','ShopID':'333','OrderSubject':'order_test','OrderStatus':0,'OrderType':'0','ServiceStartDate':'2016-05-28','ServiceEndDate':'2016-05-29','TotalSeviceTime':24,'OrderScore':20,'OrderCredits':10,'ContactInformation':'13838383838','TopContactID':132123,'ServiceLocation':'辽宁省大连市','OrderCreationDate':'2016-12-12','OrderCreationUserName':'Lily','OrderCreationUserMobile':'13823238128','OrderTotalAmount':'200','OrderUnitAmount':'100','PeopleCount':3,'OrderDescription':'这是描述','ServiceStartTime':'12:20:20','ServiceEndTime':'23:20:20'}
+	{'ServiceOrderID':'dd1234567','HouseID':'fang123','HouseOrderID':'12345','ShopID':'333','OrderSubject':'order_test','OrderStatus':0,'OrderType':'0','ServiceStartDate':'2016-05-28','ServiceEndDate':'2016-05-29','TotalSeviceTime':24,'OrderScore':20,'OrderCredits':10,'ContactInformation':'13838383838','TopContactID':132123,'ServiceLocation':'辽宁省大连市','OrderCreationDate':'2016-12-12','OrderCreationUserName':'Lily','OrderCreationUserMobile':'13823238128','OrderTotalAmount':'200','OrderUnitAmount':'100','PeopleCount':3,'OrderDescription':'这是描述','ServiceStartTime':'12:20:20','ServiceEndTime':'23:20:20','ServiceUserID':'12345'}
+
 ]
+
