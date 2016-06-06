@@ -38,7 +38,13 @@
 											<thead>
 												<tr>
 													<th>订单号</th>
+
 													<th class="hidden-480">地址</th>
+													<th>获得积分</th>
+													<th>
+														<i class="jeff-icon fa fa-clock-o bigger-110 hidden-480"></i>
+														点评时间
+													</th>
 													<th>操作</th>
 												</tr>
 											</thead>
@@ -127,44 +133,9 @@
 
 												</tr>
 											</thead>
-
-											<tbody>
-												<tr>
-
-													<td>
-														JK2333012122
-													</td>
-													<td class="hidden-480">大连市沙河口区联合路123号－1</td>
-													<td class="text-danger"><b>+25</b></td>
-
-													<td>2012-12-12 11:23:22</td>
-
-
-												</tr>
-
-												<tr>
-
-													<td>
-														jk13314234234234
-													</td>
-
-													<td class="hidden-480">2,595</td>
-													<td class="text-danger"><b>+20</b></td>
-													<td>2016-04-12</td>
-
-
-												</tr>
-
-
-											</tbody>
 										</table>
-
-
-
-
 									<!-- /section:pages/dashboard.members -->
 								</div><!-- /.#member-tab -->
-
 
 							</div>
 						</div><!-- /.widget-main -->
@@ -176,40 +147,53 @@
 <script type="text/javascript">
 
 
-	var scripts = [null,"", null]
+	var scripts = [null,"../../assets/js/dataTables/jquery.dataTables.js","../../assets/js/dataTables/jquery.dataTables.bootstrap.js","../../assets/js/dataTables/extensions/Buttons/js/dataTables.buttons.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.flash.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.html5.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.print.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.colVis.js","../../assets/js/dataTables/extensions/Select/js/dataTables.select.js", null]
 	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
 
-		$.ajax({
-		 type: 'get',
-		 url:'http://210.83.195.229:90/api/OrderAPI/getReviewList',
-		 data:{UserID:5},
-		 async: false,
-		 success: function(data){
-			 debugger;
 
-
-		 }
-		});
+	$('#simple-table1').DataTable( {
+		"paging":true,
+		"processing": true,
+        "ajax": {
+            "url": "http://210.83.195.229:90/api/OrderAPI/getReviewList?UserID=1&CommentStatus=-1&page=1&rows=100000",
+            "dataSrc": "rows",
+			"type":'GET',
+			"cache": false
+        },
+		"language": languageOption,
+        "columns": [
+			{"data": "CommentStatus" },
+            {"data": "HouseName" },
+			{"data": "CommentDate"},
+			{"data": "CommentContent"}
+        ]
+		
+    } );
+	
+	$('#simple-table').DataTable( {
+		"paging":true,
+		"processing": true,
+        "ajax": {
+            "url": "http://210.83.195.229:90/api/OrderAPI/getReviewList?UserID=1&CommentStatus=-1&page=1&rows=100000",
+            "dataSrc": "rows",
+			"type":'GET',
+			"cache": false
+        },
+		"language": languageOption,
+        "columns": [
+			{"data": "CommentStatus" },
+            {"data": "HouseName" },
+			{"data": "CommentDate"},
+			{"data": "CommentContent"}
+        ]
+		
+    } );
+	
+	
+	
 
 	  //inline scripts related to this page
 		 jQuery(function($) {
-
-			 $('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
-
-
-
-				//select/deselect all rows according to table header checkbox
-				var active_class = 'active';
-				$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
-					var th_checked = this.checked;//checkbox inside "TH" table header
-
-					$(this).closest('table').find('tbody > tr').each(function(){
-						var row = this;
-						if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
-						else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
-					});
-				});
-
 
 
 				/********************************/

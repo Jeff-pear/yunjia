@@ -115,7 +115,7 @@
 			$.ajax({
 				 type: 'get',
 				 url:'http://210.83.195.229:90/api/OrderAPI/getOrderList',
-				 data:{UserID:5,OrderStatus:-1,rows:rows,page:curPageNum},
+				 data:{UserID:1,OrderStatus:-1,rows:rows,page:curPageNum},
 				 async: false,
 				 success: function(result){
 
@@ -142,191 +142,196 @@
 							$('#dynamic-table_next').addClass('disabled');
 						}
 					}
-					
-				 	var fromNum = 1+(curPageNum-1)*rows;
-				 	var toNum = fromNum+9;
-				 	toNum>result.total?toNum=result.total:toNum=toNum;
-					$('#pageTools #fromNum').html(fromNum);
-					$('#pageTools #toNum').html(toNum);
-				 	$('#pageTools #total').html(result.total);
+					if(result.total>0){
+						var fromNum = 1+(curPageNum-1)*rows;
+						var toNum = fromNum+9;
+						toNum>result.total?toNum=result.total:toNum=toNum;
+						$('#pageTools #fromNum').html(fromNum);
+						$('#pageTools #toNum').html(toNum);
+						$('#pageTools #total').html(result.total);
 
-					 var data = result.rows;
-						for(var i = 0 ; i < data.length ; i++){
-							var sData = data[i];
+						 var data = result.rows;
+							for(var i = 0 ; i < data.length ; i++){
+								var sData = data[i];
 
-							var orderType = '';
-							switch (sData.OrderType){
-								case 0:
-								 orderType = '保洁';
-								 break;
-								case 1:
-									orderType = '车队';
-									break;
-								case 2:
-									orderType = '维修';
-									break;
-							}
+								var orderType = '';
+								switch (sData.OrderType){
+									case 0:
+									 orderType = '保洁';
+									 break;
+									case 1:
+										orderType = '车队';
+										break;
+									case 2:
+										orderType = '维修';
+										break;
+								}
 
-							var orderStatus = '';
-							switch (sData.OrderStatus){
-								case 0:
-								 orderStatus = '新订单';
-								 break;
-								case 1:
-									orderStatus = '待审核';
-									break;
-								case 2:
-									orderStatus = '审核通过';
-									break;
-								case 3:
-								 orderStatus = '待支付';
-								 break;
-								case 4:
-									orderStatus = '就绪';
-									break;
-								case 5:
-									orderStatus = '服务中';
-									break;
-								case 6:
-									orderStatus = '服务完成';
-									break;
-								case 7:
-									orderStatus = '已评分';
-									break;
-								case 8:
-								 orderStatus = '订单关闭';
-								 break;
-								case 9:
-									orderStatus = '锁定';
-									break;
+								var orderStatus = '';
+								switch (sData.OrderStatus){
+									case 0:
+									 orderStatus = '新订单';
+									 break;
+									case 1:
+										orderStatus = '待审核';
+										break;
+									case 2:
+										orderStatus = '审核通过';
+										break;
+									case 3:
+									 orderStatus = '待支付';
+									 break;
+									case 4:
+										orderStatus = '就绪';
+										break;
+									case 5:
+										orderStatus = '服务中';
+										break;
+									case 6:
+										orderStatus = '服务完成';
+										break;
+									case 7:
+										orderStatus = '已评分';
+										break;
+									case 8:
+									 orderStatus = '订单关闭';
+									 break;
+									case 9:
+										orderStatus = '锁定';
+										break;
 
-							}
-							$('#orderDataList tbody')
-							.append('<tr><td class="center"><div class="action-buttons">'+
-													'<a onClick="showDetailAlink(this)" class="green bigger-140 show-details-btn" title="Show Details">'+
-														'<i class="jeff-icon fa fa-angle-double-down"></i>'+
-														'<span class="sr-only">Details</span></a>'+
-													'</div></td>'+
-											'<td><a onClick="showDetailAlink(this)">'+sData.ServiceOrderID+'</a></td>'+
-											'<td>'+sData.OrderSubject+'</td>'+
-											'<td>'+orderType+'</td>'+
-											'<td >'+sData.ServiceLocation+'</td>'+
-											'<td>'+sData.OrderCreationDate+'</td>'+
-											'<td>'+
-												'<span class="label label-sm label-warning">'+orderStatus+'</span>'+
-											'</td>'+
-											'<td>'+
-												'<div class="hidden-sm hidden-xs btn-group">'+
-													'<button class="btn btn-xs btn-success"><i class="jeff-icon fa fa-close bigger-120"></i>审核</button>'+
-													'<button class="btn btn-xs btn-info"><i class="jeff-icon fa fa-pencil bigger-120"></i>支付</button>'+
-													'<button class="btn btn-xs btn-danger"><i class="jeff-icon fa fa-trash-o bigger-120"></i>评分</button>'+
-													'<button class="btn btn-xs btn-warning"><i class="jeff-icon fa fa-flag bigger-120"></i>收藏</button>'+
-												'</div>'+
-												'<div class="hidden-md hidden-lg">'+
-													'<div class="inline pos-rel">'+
-														'<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">'+
-															'<i class="jeff-icon fa fa-cog icon-only bigger-110"></i>'+
-														'</button>'+
-														'<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">'+
-															'<li>'+
-																'<a href="#" class="tooltip-info" data-rel="tooltip" title="View">'+
-																	'<span class="blue">'+
-																		'<i class="jeff-icon fa fa-search-plus bigger-120"></i>'+
-																	'</span>'+
-																'</a>'+
-															'</li>'+
-															'<li>'+
-																'<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">'+
-																	'<span class="green">'+
-																		'<i class="jeff-icon fa fa-pencil-square-o bigger-120"></i>'+
-																	'</span>'+
-																'</a>'+
-															'</li>'+
-															'<li>'+
-																'<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">'+
-																	'<span class="red">'+
-																		'<i class="jeff-icon fa fa-trash-o bigger-120"></i>'+
-																	'</span>'+
-																'</a>'+
-															'</li>'+
-														'</ul>'+
+								}
+								$('#orderDataList tbody')
+								.append('<tr><td class="center"><div class="action-buttons">'+
+														'<a onClick="showDetailAlink(this)" class="green bigger-140 show-details-btn" title="Show Details">'+
+															'<i class="jeff-icon fa fa-angle-double-down"></i>'+
+															'<span class="sr-only">Details</span></a>'+
+														'</div></td>'+
+												'<td><a onClick="showDetailAlink(this)">'+sData.ServiceOrderID+'</a></td>'+
+												'<td>'+sData.OrderSubject+'</td>'+
+												'<td>'+orderType+'</td>'+
+												'<td >'+sData.ServiceLocation+'</td>'+
+												'<td>'+sData.OrderCreationDate+'</td>'+
+												'<td>'+
+													'<span class="label label-sm label-warning">'+orderStatus+'</span>'+
+												'</td>'+
+												'<td>'+
+													'<div class="hidden-sm hidden-xs btn-group">'+
+														'<button class="btn btn-xs btn-success"><i class="jeff-icon fa fa-close bigger-120"></i>审核</button>'+
+														'<button class="btn btn-xs btn-info"><i class="jeff-icon fa fa-pencil bigger-120"></i>支付</button>'+
+														'<button class="btn btn-xs btn-danger"><i class="jeff-icon fa fa-trash-o bigger-120"></i>评分</button>'+
+														'<button class="btn btn-xs btn-warning"><i class="jeff-icon fa fa-flag bigger-120"></i>收藏</button>'+
 													'</div>'+
-												'</div>'+
-											'</td>'+
-										'</tr>'+
+													'<div class="hidden-md hidden-lg">'+
+														'<div class="inline pos-rel">'+
+															'<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">'+
+																'<i class="jeff-icon fa fa-cog icon-only bigger-110"></i>'+
+															'</button>'+
+															'<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">'+
+																'<li>'+
+																	'<a href="#" class="tooltip-info" data-rel="tooltip" title="View">'+
+																		'<span class="blue">'+
+																			'<i class="jeff-icon fa fa-search-plus bigger-120"></i>'+
+																		'</span>'+
+																	'</a>'+
+																'</li>'+
+																'<li>'+
+																	'<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">'+
+																		'<span class="green">'+
+																			'<i class="jeff-icon fa fa-pencil-square-o bigger-120"></i>'+
+																		'</span>'+
+																	'</a>'+
+																'</li>'+
+																'<li>'+
+																	'<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">'+
+																		'<span class="red">'+
+																			'<i class="jeff-icon fa fa-trash-o bigger-120"></i>'+
+																		'</span>'+
+																	'</a>'+
+																'</li>'+
+															'</ul>'+
+														'</div>'+
+													'</div>'+
+												'</td>'+
+											'</tr>'+
 
-										'<tr class="detail-row">'+
-											'<td colspan="8">'+
-												'<div class="table-detail">'+
-													'<div class="row">'+
+											'<tr class="detail-row">'+
+												'<td colspan="8">'+
+													'<div class="table-detail">'+
+														'<div class="row">'+
 
-														'<div class="col-xs-12 col-sm-12">'+
-															'<div class="space visible-xs"></div>'+
-															'<div class="profile-user-info profile-user-info-striped">'+
-																'<div class="profile-info-row">'+
-																	'<div class="profile-info-name"> 服务开始时间 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.ServiceStartDate+' '+sData.ServiceStartTime+'</span>'+
-																	'</div>'+
-																	'<div class="profile-info-name"> 服务结束时间 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.ServiceEndDate+' '+sData.ServiceEndTime+'</span>'+
-																	'</div>'+
-																	'<div class="profile-info-name"> 服务时间 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.TotalSeviceTime+'</span>'+
-																	'</div>'+
+															'<div class="col-xs-12 col-sm-12">'+
+																'<div class="space visible-xs"></div>'+
+																'<div class="profile-user-info profile-user-info-striped">'+
+																	'<div class="profile-info-row">'+
+																		'<div class="profile-info-name"> 服务开始时间 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.ServiceStartDate+' '+sData.ServiceStartTime+'</span>'+
+																		'</div>'+
+																		'<div class="profile-info-name"> 服务结束时间 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.ServiceEndDate+' '+sData.ServiceEndTime+'</span>'+
+																		'</div>'+
+																		'<div class="profile-info-name"> 服务时间 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.TotalSeviceTime+'</span>'+
+																		'</div>'+
 
-																'</div>'+
-																'<div class="profile-info-row">'+
-																	'<div class="profile-info-name"> 订单评分 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.OrderScore+'</span>'+
 																	'</div>'+
-																	'<div class="profile-info-name"> 订单积分 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.OrderCredits+'</span>'+
+																	'<div class="profile-info-row">'+
+																		'<div class="profile-info-name"> 订单评分 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.OrderScore+'</span>'+
+																		'</div>'+
+																		'<div class="profile-info-name"> 订单积分 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.OrderCredits+'</span>'+
+																		'</div>'+
+																		'<div class="profile-info-name"> 需要人数 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.PeopleCount+'</span>'+
+																		'</div>'+
 																	'</div>'+
-																	'<div class="profile-info-name"> 需要人数 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.PeopleCount+'</span>'+
+																	'<div class="profile-info-row">'+
+																		'<div class="profile-info-name"> 订单单价 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.OrderUnitAmount+'</span>'+
+																		'</div>'+
+																		'<div class="profile-info-name"> 订单总额 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.OrderTotalAmount+'</span>'+
+																		'</div>'+
+																		'<div class="profile-info-name"> 订单总额 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.OrderTotalAmount+'</span>'+
+																		'</div>'+
 																	'</div>'+
-																'</div>'+
-																'<div class="profile-info-row">'+
-																	'<div class="profile-info-name"> 订单单价 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.OrderUnitAmount+'</span>'+
-																	'</div>'+
-																	'<div class="profile-info-name"> 订单总额 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.OrderTotalAmount+'</span>'+
-																	'</div>'+
-																	'<div class="profile-info-name"> 订单总额 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.OrderTotalAmount+'</span>'+
-																	'</div>'+
-																'</div>'+
-																'<div class="profile-info-row">'+
-																	'<div class="profile-info-name"> 订单创建人姓名 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.OrderCreationUserName+'</span>'+
-																	'</div>'+
-																	'<div class="profile-info-name"> 订单创建人电话 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.OrderCreationUserMobile+'</span>'+
-																	'</div>'+
-																	'<div class="profile-info-name"> 订单描述 </div>'+
-																	'<div class="profile-info-value">'+
-																		'<span>'+sData.OrderDescription+'</span>'+
+																	'<div class="profile-info-row">'+
+																		'<div class="profile-info-name"> 订单创建人姓名 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.OrderCreationUserName+'</span>'+
+																		'</div>'+
+																		'<div class="profile-info-name"> 订单创建人电话 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.OrderCreationUserMobile+'</span>'+
+																		'</div>'+
+																		'<div class="profile-info-name"> 订单描述 </div>'+
+																		'<div class="profile-info-value">'+
+																			'<span>'+sData.OrderDescription+'</span>'+
+																		'</div>'+
 																	'</div>'+
 																'</div>'+
 															'</div>'+
 														'</div>'+
 													'</div>'+
-												'</div>'+
-											'</td>'+
-										'</tr>'
-									)
+												'</td>'+
+											'</tr>'
+										)
+								}
+				 	
+						}else{
+							$('#dynamic-table_info').html('无数据');
+							$('#dynamic-table_paginate').html('');
 						}
 
 

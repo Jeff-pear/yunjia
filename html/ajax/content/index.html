@@ -3,7 +3,11 @@
 
 <!-- ajax layout which only needs content area -->
 
-
+<style>
+.dataTables_wrapper .row:first-child{
+	background-color:#FFFFFF;
+}
+</style>
 <div class="row">
 	<div class="col-xs-12">
 		<!-- PAGE CONTENT BEGINS -->
@@ -97,7 +101,7 @@
 
 					<div class="widget-body">
 						<div class="widget-main no-padding">
-							<table class="table table-bordered table-striped">
+							<table class="table table-bordered table-striped" id="example">
 								<thead class="thin-border-bottom">
 									<tr>
 										<th>
@@ -105,98 +109,20 @@
 										</th>
 
 										<th>
-											<i class="jeff-icon fa fa-caret-right blue"></i>价格
+											<i class="jeff-icon fa fa-caret-right blue"></i>订单标题
 										</th>
 
-										<th  class="hidden-480">
-											<i class="jeff-icon fa fa-caret-right blue"></i>日期
+										<th>
+											<i class="jeff-icon fa fa-caret-right blue"></i>订单类型
 										</th>
-
+										
+										
 										<th>
 											<i class="jeff-icon fa fa-caret-right blue"></i>状态
 										</th>
 									</tr>
 								</thead>
 
-								<tbody>
-									<tr>
-										<td>订单12345678</td>
-
-										<td>
-											<small>
-												<s class="red">$29.99</s>
-											</small>
-											<b class="green">$19.99</b>
-										</td>
-
-										<td class="hidden-480">2016-02-12</td>
-
-										<td >
-											<span class="label label-info arrowed-right arrowed-in">待支付</span>
-										</td>
-									</tr>
-
-									<tr>
-										<td>online.com</td>
-
-										<td>
-											<b class="blue">$16.45</b>
-										</td>
-
-										<td class="hidden-480">2016-02-12</td>
-
-										<td >
-											<span class="label label-success arrowed-in arrowed-in-right">服务完成</span>
-										</td>
-									</tr>
-
-									<tr>
-										<td>newnet.com</td>
-
-										<td>
-											<b class="blue">$15.00</b>
-										</td>
-
-										<td class="hidden-480">2016-02-12</td>
-
-										<td >
-											<span class="label label-danger arrowed">服务中</span>
-										</td>
-									</tr>
-
-									<tr>
-										<td>web.com</td>
-
-										<td>
-											<small>
-												<s class="red">$24.99</s>
-											</small>
-											<b class="green">$19.95</b>
-										</td>
-
-										<td class="hidden-480">2016-02-17</td>
-
-										<td>
-											<span class="label arrowed">
-												<s>订单关闭</s>
-											</span>
-										</td>
-									</tr>
-
-									<tr>
-										<td>domain.com</td>
-
-										<td>
-											<b class="blue">$12.00</b>
-										</td>
-
-										<td class="hidden-480">2016-02-14</td>
-
-										<td >
-											<span class="label label-warning arrowed arrowed-right">已评分</span>
-										</td>
-									</tr>
-								</tbody>
 							</table>
 						</div><!-- /.widget-main -->
 					</div><!-- /.widget-body -->
@@ -206,9 +132,8 @@
 		</div><!-- /.row -->
 
 		<div class="hr hr32 hr-dotted"></div>
-
-
-
+		
+					
 		<!-- PAGE CONTENT ENDS -->
 	</div><!-- /.col -->
 </div><!-- /.row -->
@@ -219,21 +144,103 @@
   <script src="../../assets/js/excanvas.js"></script>
 <![endif]-->
 <script type="text/javascript">
-	var scripts = [null,"../../assets/js/jquery-ui.custom.js","../../assets/js/jquery.ui.touch-punch.js","../../assets/js/jquery.easypiechart.js","../../assets/js/jquery.sparkline.js","../../assets/js/flot/jquery.flot.js","../../assets/js/flot/jquery.flot.pie.js","../../assets/js/flot/jquery.flot.resize.js", null]
+	var scripts = [null,"../../assets/js/jquery-ui.custom.js","../../assets/js/jquery.ui.touch-punch.js","../../assets/js/jquery.easypiechart.js","../../assets/js/jquery.sparkline.js","../../assets/js/flot/jquery.flot.js","../../assets/js/flot/jquery.flot.pie.js","../../assets/js/flot/jquery.flot.resize.js", "../../assets/js/dataTables/jquery.dataTables.js","../../assets/js/dataTables/jquery.dataTables.bootstrap.js","../../assets/js/dataTables/extensions/Buttons/js/dataTables.buttons.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.flash.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.html5.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.print.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.colVis.js","../../assets/js/dataTables/extensions/Select/js/dataTables.select.js",null]
 	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
+	
+	 $('#example').DataTable( {
+		"paging":true,
+		"processing": true,
+        "ajax": {
+            "url": "http://210.83.195.229:90/api/IndexAPI/index?UserID=1&OrderStatus=-1",
+            "dataSrc": "pendingOrder",
+			"type":'GET',
+			"cache": false
+        },
+		"language": languageOption,
+        "columns": [
+			{"data": "ServiceOrderID" },
+            {"data": "OrderSubject" },
+			{"data": "OrderType"},
+			{"data": "OrderStatus"}
+        ],
+		"columnDefs": [
+            {
+                
+                "render": function ( data, type, row ) {
+				
+					var orderType = '';
+					switch (data){
+						case 0:
+							orderType = '保洁';
+						 break;
+						case 1:
+							orderType = '车队';
+							break;
+						case 2:
+							orderType = '维修';
+							break;
+					}
+								
+                    return orderType;
+                },
+                "targets": 2
+            },
+            {
+                "render": function ( data, type, row ) {
+					var orderStatus = '';
+					switch (data){
+						case 0:
+							orderStatus = '新订单';
+							break;
+						case 1:
+							orderStatus = '待审核';
+							break;
+						case 2:
+							orderStatus = '审核通过';
+							break;
+						case 3:
+							orderStatus = '待支付';
+							break;
+						case 4:
+							orderStatus = '就绪';
+							break;
+						case 5:
+							orderStatus = '服务中';
+							break;
+						case 6:
+							orderStatus = '服务完成';
+							break;
+						case 7:
+							orderStatus = '已评分';
+							break;
+						case 8:
+							orderStatus = '订单关闭';
+							break;
+						case 9:
+							orderStatus = '锁定';
+							break;
+					}
+								
+                    return orderStatus;
+                },
+                "targets": 3
+            }
+        ]
+    } );
+	
 	  //inline scripts related to this page
 		 jQuery(function($) {
 			 $.ajax({
-			 	type: 'post',
+			 	type: 'get',
 			 	url:'http://210.83.195.229:90/api/IndexAPI/index',
-			 	data:{UserID:5},
+			 	data:{UserID:1,OrderStatus:-1},
 			 	async: false,
 			 	success: function(data){
-			 		debugger;
 					$('#UserCredits').html(data.UserCredits);
 					$('#UserMail').html(data.UserMail);
 					$('#UserName').html(data.UserName);
 					$('#UserMobile').html(data.UserMobile);
+					
 
 			 	}
 			 });
@@ -243,42 +250,6 @@
 			//$tooltip.remove();
 
 		});
-
-
-
-
-		var d1 = [];
-		for (var i = 0; i < Math.PI * 2; i += 0.5) {
-			d1.push([i, Math.sin(i)]);
-		}
-
-		var d2 = [];
-		for (var i = 0; i < Math.PI * 2; i += 0.5) {
-			d2.push([i, Math.cos(i)]);
-		}
-
-		var d3 = [];
-		for (var i = 0; i < Math.PI * 2; i += 0.2) {
-			d3.push([i, Math.tan(i)]);
-		}
-
-
-
-
-		$('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
-		function tooltip_placement(context, source) {
-			var $source = $(source);
-			var $parent = $source.closest('.tab-content')
-			var off1 = $parent.offset();
-			var w1 = $parent.width();
-
-			var off2 = $source.offset();
-			//var w2 = $source.width();
-
-			if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
-			return 'left';
-		}
-
 
 		$('.dialogs,.comments').jeff_scroll({
 			size: 300
