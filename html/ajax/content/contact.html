@@ -1,0 +1,480 @@
+<title>用户信息 - 小时工</title>
+
+<link rel="stylesheet" href="../../assets/css/jquery-ui.custom.css" />
+<link rel="stylesheet" href="../../assets/css/select2.css" />
+<link rel="stylesheet" href="../../assets/css/bootstrap-datepicker3.css" />
+<link rel="stylesheet" href="../../assets/css/bootstrap-editable.css" />
+
+<!-- ajax layout which only needs content area -->
+<div class="page-header">
+	<h1>
+		用户信息
+		<small>
+			<i class="jeff-icon fa fa-angle-double-right"></i>
+			常用联系人
+		</small>
+	</h1>
+</div><!-- /.page-header -->
+
+<div class="row">
+	
+		<!-- PAGE CONTENT BEGINS -->
+		
+		<div>
+			
+
+		<div >
+			<div id="user-profile-2" class="user-profile">
+				<div class="tabbable">
+					<ul class="nav nav-tabs padding-18">
+
+						<li class="active">
+							<a data-toggle="tab" href="#friends">
+								<i class="blue jeff-icon fa fa-users bigger-120"></i>
+								常用联系人
+							</a>
+						</li>
+
+					</ul>
+
+					<div class="tab-content no-border padding-24">
+
+						<div id="friends" class="tab-pane in active">
+							<!-- #section:pages/profile.friends -->
+							<div class="profile-users clearfix">
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar4.png" alt="Bob Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-online"></span>
+													Bob Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Content Editor</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 orange"></i>
+													<span class="green"> 20 mins ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar1.png" alt="Rose Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-offline"></span>
+													Rose Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Graphic Designer</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 grey"></i>
+													<span class="grey"> 30 min ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar.png" alt="Jim Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-busy"></span>
+													Jim Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">SEO &amp; Advertising</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 red"></i>
+													<span class="grey"> 1 hour ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar5.png" alt="Alex Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-idle"></span>
+													Alex Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Marketing</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 orange"></i>
+													<span class=""> 40 minutes idle </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar2.png" alt="Phil Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-online"></span>
+													Phil Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Public Relations</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 orange"></i>
+													<span class="green"> 2 hours ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar3.png" alt="Susan Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-online"></span>
+													Susan Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">HR Management</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 orange"></i>
+													<span class="green"> 20 mins ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar1.png" alt="Jennifer Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-offline"></span>
+													Jennifer Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Graphic Designer</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 grey"></i>
+													<span class="grey"> 2 hours ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemdiv memberdiv">
+									<div class="inline pos-rel">
+										<div class="user">
+											<a href="#">
+												<img src="../../assets/avatars/avatar3.png" alt="Alexa Doe's avatar" />
+											</a>
+										</div>
+
+										<div class="body">
+											<div class="name">
+												<a href="#">
+													<span class="user-status status-offline"></span>
+													Alexa Doe
+												</a>
+											</div>
+										</div>
+
+										<div class="popover">
+											<div class="arrow"></div>
+
+											<div class="popover-content">
+												<div class="bolder">Accounting</div>
+
+												<div class="time">
+													<i class="jeff-icon fa fa-clock-o middle bigger-120 grey"></i>
+													<span class="grey"> 4 hours ago </span>
+												</div>
+
+												<div class="hr dotted hr-8"></div>
+
+												<div class="tools action-buttons">
+													<a href="#">
+														<i class="jeff-icon fa fa-facebook-square blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-twitter-square light-blue bigger-150"></i>
+													</a>
+
+													<a href="#">
+														<i class="jeff-icon fa fa-google-plus-square red bigger-150"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- /section:pages/profile.friends -->
+							<div class="hr hr10 hr-double"></div>
+
+							
+						</div><!-- /#friends -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- /.col -->
+</div><!-- /.row -->
+</div>
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+  <script src="../../assets/js/excanvas.js"></script>
+<![endif]-->
+<script type="text/javascript">
+	var scripts = [null,"../../assets/js/jquery-ui.custom.js","../../assets/js/jquery.ui.touch-punch.js","../../assets/js/jquery.gritter.js","../../assets/js/bootbox.js","../../assets/js/jquery.easypiechart.js","../../assets/js/date-time/bootstrap-datepicker.js","../../assets/js/jquery.hotkeys.js","../../assets/js/bootstrap-wysiwyg.js","../../assets/js/jquery.gritter.js","../../assets/js/x-editable/bootstrap-editable.js","../../assets/js/x-editable/jeff-editable.js","../../assets/js/jquery.maskedinput.js", null]
+	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
+	  //inline scripts related to this page
+		jQuery(function($) {
+
+		//$('a[ data-original-title]').tooltip();
+
+		//right & left position
+		//show the user info on right or left depending on its position
+		$('#user-profile-2 .memberdiv').on('mouseenter touchstart', function(){
+			var $this = $(this);
+			var $parent = $this.closest('.tab-pane');
+
+			var off1 = $parent.offset();
+			var w1 = $parent.width();
+
+			var off2 = $this.offset();
+			var w2 = $this.width();
+
+			var place = 'left';
+			if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) place = 'right';
+
+			$this.find('.popover').removeClass('right left').addClass(place);
+		}).on('click', function(e) {
+			e.preventDefault();
+		});
+	});
+
+
+	});
+</script>
