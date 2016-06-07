@@ -156,27 +156,46 @@
 	$('#simple-table1').DataTable( {
 		"paging":true,
 		"processing": true,
+		"bServerSide": true,
         "ajax": {
-            "url": "http://210.83.195.229:90/api/OrderAPI/getReviewList?UserID=1&CommentStatus=-1&page=1&rows=100000",
+            "url": "http://210.83.195.229:90/api/OrderAPI/getReviewList",
             "dataSrc": "rows",
+			"data":{
+				UserID:1,
+				OrderStatus:-1
+				
+			},
 			"type":'GET',
 			"cache": false
         },
 		"language": languageOption,
         "columns": [
+			{"data": "CommentID"},
 			{"data": "CommentStatus" },
             {"data": "HouseName" },
 			{"data": "CommentDate"},
 			{"data": "CommentContent"}
+        ],
+		"columnDefs": [
+            {
+                "visible": true ,
+                "targets": 0
+            }
         ]
 		
     } );
-	
+	<!--
 	$('#simple-table').DataTable( {
 		"paging":true,
 		"processing": true,
         "ajax": {
-            "url": "http://210.83.195.229:90/api/OrderAPI/getReviewList?UserID=1&CommentStatus=-1&page=1&rows=100000",
+            "url": "http://210.83.195.229:90/api/OrderAPI/getReviewList",
+			"data":{
+				UserID:1,
+				OrderStatus:7,
+				start:1,
+				length:100000
+			},
             "dataSrc": "rows",
 			"type":'GET',
 			"cache": false
@@ -191,7 +210,7 @@
 		
     } );
 	
-	
+	-->
 	
 
 	  //inline scripts related to this page
