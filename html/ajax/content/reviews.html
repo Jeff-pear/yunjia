@@ -102,11 +102,6 @@
         method: 'GET' // Ajax HTTP method
     }, opts );
  
-    // Private variables for storing the cache
-    var cacheLower = -1;
-    var cacheUpper = null;
-    var cacheLastJson = null;
- 
     return function ( request, drawCallback, settings ) {
         var requestStart  = request.start;
         var drawStart     = request.start;

@@ -19,7 +19,7 @@
 </div><!-- /.page-header -->
 
 <div class="row">
-	<div class="col-xs-12">
+	
 		<!-- PAGE CONTENT BEGINS -->
 		<div class="clearfix">
 			<div class="pull-left alert alert-success no-margin">
@@ -282,133 +282,8 @@
 							</div>
 						</div>
 						
-						<div class="space-20"></div>
 						
-						<div class="profile-user-info profile-user-info-striped">
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 用户名 </div>
-
-								<div class="profile-info-value">
-									<span class="editable" id="username" name="UserLoginName">alexdoe</span>
-								</div>
-							</div>
-
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 邮箱 </div>
-
-								<div class="profile-info-value">
-									<span class="editable" id="email" name="UserMail">324@company.com</span>
-
-								</div>
-								<button class="btn btn-info btn-xs btn-success" id="check-email">立即验证</button>
-							</div>
-
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 手机 </div>
-
-								<div class="profile-info-value">
-									<span class="editable" id="phone" name="UserMobile">12132323</span>
-
-								</div>
-								<button class="btn btn-info btn-xs btn-success" id="check-phone">立即验证</button>
-							</div>
-
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 性别 </div>
-
-								<div class="profile-info-value">
-									<input class="jeff" type="radio" name="UserSex" value="female" >
-									<span class="lbl middle"> 男</span>&nbsp;
-									<input class="jeff" type="radio" name="UserSex" value="male" >
-									<span class="lbl middle"> 女</span>
-								</div>
-							</div>
-
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 出生日期 </div>
-
-								<div class="profile-info-value">
-									<span class="editable" id="age" name="UserBorthDay">2010/06/20</span>
-								</div>
-							</div>
-
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 所在城市 </div>
-
-								<div class="profile-info-value">
-									<i class="fa fa-map-marker light-orange bigger-110"></i>
-									<span class="editable" id="country">Netherlands</span>
-									<span class="editable" id="city">Amsterdam</span>
-								</div>
-							</div>
-
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 教育 </div>
-
-								<div class="profile-info-value">
-									<span class="editable" id="education" name="UserEducation">--请选择--</span>
-								</div>
-							</div>
-
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 行业 </div>
-
-								<div class="profile-info-value">
-									<!-- #section:plugins/input.select2 -->
-
-									<div>
-										<select multiple="" id="state" name="state" class="select2" data-placeholder="点击添加...">
-											<option value="AL">造船</option>
-											<option value="AK">军工</option>
-											<option value="AZ">艺术</option>
-											<option value="AR">体育</option>
-											<option value="CA">医疗</option>
-											<option value="CO">互联网</option>
-											<option value="CT">新闻媒体</option>
-
-
-										</select>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 注册时间 </div>
-
-								<div class="profile-info-value">
-									<span id="UserRegisteDate" >2010/06/20 23:12:53</span>
-								</div>
-							</div>
-
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 最近登录时间 </div>
-
-								<div class="profile-info-value">
-									<span id="UserLastLoginDate">2016/05/05 12:12:12</span>
-								</div>
-							</div>
-
-
-							<div class="profile-info-row">
-								<div class="profile-info-name"> 自我介绍 </div>
-
-								<div class="profile-info-value">
-									<span class="editable" id="about">这是一些描述...</span>
-								</div>
-							</div>
-
-							<div >
-								<div class="col-md-offset-3 col-md-9">
-									<button class="btn btn-info btn-xlg" type="button">
-										<i class="jeff-icon fa fa-check bigger-110"></i>
-										Save
-									</button>
-
-
-								</div>
-							</div>
-						</div>
+						
 
 					<!-- /section:pages/profile.info -->
 					<div class="space-20"></div>
@@ -902,7 +777,7 @@
 					</form>
 				</div><!-- /.span -->
 			</div><!-- /.user-profile -->
-		</div>
+		
 
 		<!-- PAGE CONTENT ENDS -->
 	</div><!-- /.col -->
@@ -1316,6 +1191,7 @@
 		////////////////////
 		//change profile
 		$('[data-toggle="buttons"] .btn').on('click', function(e){
+		debugger;
 			var target = $(this).find('input[type=radio]');
 			var which = parseInt(target.val());
 			$('.user-profile').parent().addClass('hide');
