@@ -17,7 +17,7 @@
 					<ul class="nav nav-tabs" id="myTab">
 						<li class="active">
 							<a data-toggle="tab" href="#unreviews-tab">
-								<span class="badge badge-danger">4</span>
+								<span class="badge badge-danger" id="unreviews-num">4</span>
 								未点评
 							</a>
 						</li>
@@ -49,68 +49,7 @@
 													<th>操作</th>
 												</tr>
 											</thead>
-											<tbody>
-												<tr>
-													<td>
-														JK2333012122
-													</td>
-													<td class="hidden-480">大连市沙河口区联合路123号－1</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-																<a href="#page/reviews_detail" class="btn btn-xs btn-info">
-																	<i class="jeff-icon fa fa-pencil bigger-120 "></i>
-																	立即点评
-																</a>
-														</div>
-														<div class="hidden-md hidden-lg">
-															<div class="inline pos-rel">
-																<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-																	<i class="jeff-icon fa fa-cog icon-only bigger-110"></i>
-																</button>
-																<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-																	<li>
-																		<a href="#" class="tooltip-info" data-rel="tooltip" title="立即点评">
-																			<span class="blue">
-																				<i class="jeff-icon fa fa-search-plus bigger-120"></i>
-																			</span>
-																		</a>
-																	</li>
-																</ul>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														jk13314234234234
-													</td>
-													<td class="hidden-480">2,595</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-															<a href="#page/reviews-detail" class="btn btn-xs btn-info">
-																<i class="jeff-icon fa fa-pencil bigger-120"></i>
-																立即点评
-															</a>
-														</div>
-														<div class="hidden-md hidden-lg">
-															<div class="inline pos-rel">
-																<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-																	<i class="jeff-icon fa fa-cog icon-only bigger-110"></i>
-																</button>
-																<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-																	<li>
-																		<a href="#" class="tooltip-info" data-rel="tooltip" title="立即点评">
-																			<span class="blue">
-																				<i class="jeff-icon fa fa-search-plus bigger-120"></i>
-																			</span>
-																		</a>
-																	</li>
-																</ul>
-															</div>
-														</div>
-													</td>
-												</tr>
-											</tbody>
+											
 										</table>
 
 									<!-- /section:pages/dashboard.tasks -->
@@ -152,22 +91,79 @@
 	var scripts = [null,"../../assets/js/dataTables/jquery.dataTables.js","../../assets/js/dataTables/jquery.dataTables.bootstrap.js","../../assets/js/dataTables/extensions/Buttons/js/dataTables.buttons.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.flash.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.html5.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.print.js","../../assets/js/dataTables/extensions/Buttons/js/buttons.colVis.js","../../assets/js/dataTables/extensions/Select/js/dataTables.select.js", null]
 	$('.page-content-area').jeff_ajax('loadScripts', scripts, function() {
 
+	
+	$.fn.dataTable.pipeline = function ( opts ) {
+    // Configuration options
+    var conf = $.extend( {
+		domId: '',
+        url: '',      // script url
+        data: null,   // function or object with parameters to send to the server
+                      // matching how `ajax.data` works in DataTables
+        method: 'GET' // Ajax HTTP method
+    }, opts );
+ 
+    // Private variables for storing the cache
+    var cacheLower = -1;
+    var cacheUpper = null;
+    var cacheLastJson = null;
+ 
+    return function ( request, drawCallback, settings ) {
+        var requestStart  = request.start;
+        var drawStart     = request.start;
+        var requestLength = request.length;
+        var requestEnd    = requestStart + requestLength;
+        settings.clearCache = false;
+        
+		// Provide the same `data` options as DataTables.
+		if ( $.isFunction ( conf.data ) ) {
+			// As a function it is executed with the data object as an arg
+			// for manipulation. If an object is returned, it is used as the
+			// data object to submit
+			var d = conf.data( request );
+			if ( d ) {
+				$.extend( request, d );
+			}
+		}
+		else if ( $.isPlainObject( conf.data ) ) {
+			// As an object, the data given extends the default
+			$.extend( request, conf.data );
+		}
 
-	$('#simple-table1').DataTable( {
+		settings.jqXHR = $.ajax( {
+			"type":     conf.method,
+			"url":      conf.url,
+			"data":     request,
+			"dataType": "json",
+			"cache":    false,
+			"success":  function ( json ) {
+				$('#unreviews-num').html(json.iTotalRecords);
+				drawCallback( json );
+				if(conf.domId != ''){$('#'+conf.domId).css('width','');}
+			}
+		} );
+    }
+};
+ 
+
+
+	var table1 = $('#simple-table1').DataTable( {
 		"paging":true,
+		"autoWidth": true,
 		"processing": true,
 		"bServerSide": true,
-        "ajax": {
+        "ajax": $.fn.dataTable.pipeline({
+			"domId": 'simple-table1',
             "url": "http://210.83.195.229:90/api/OrderAPI/getReviewList",
-            "dataSrc": "rows",
+            //"dataSrc": "rows",
 			"data":{
 				UserID:1,
-				OrderStatus:-1
-				
+				OrderStatus: 6,
+				length:10
 			},
 			"type":'GET',
 			"cache": false
-        },
+			
+        }),
 		"language": languageOption,
         "columns": [
 			{"data": "CommentID"},
@@ -184,22 +180,25 @@
         ]
 		
     } );
-	<!--
-	$('#simple-table').DataTable( {
+
+	var table2 = $('#simple-table').DataTable( {
+		
 		"paging":true,
 		"processing": true,
-        "ajax": {
+		"autoWidth": true,
+		"bServerSide": true,
+        "ajax": $.fn.dataTable.pipeline({
+			"domId": 'simple-table',
             "url": "http://210.83.195.229:90/api/OrderAPI/getReviewList",
 			"data":{
 				UserID:1,
 				OrderStatus:7,
-				start:1,
-				length:100000
+				length:10
 			},
-            "dataSrc": "rows",
+            //"dataSrc": "rows",
 			"type":'GET',
 			"cache": false
-        },
+        }),
 		"language": languageOption,
         "columns": [
 			{"data": "CommentStatus" },
@@ -210,13 +209,11 @@
 		
     } );
 	
-	-->
+	
 	
 
 	  //inline scripts related to this page
 		 jQuery(function($) {
-
-
 				/********************************/
 				//add tooltip for small view action buttons in dropdown menu
 				$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
@@ -235,7 +232,7 @@
 					return 'left';
 				}
 
-
-	})
+		
+		})
 	});
 </script>
