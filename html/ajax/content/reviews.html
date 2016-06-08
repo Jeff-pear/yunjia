@@ -165,7 +165,9 @@
 			{"data": "CommentStatus" },
             {"data": "HouseName" },
 			{"data": "CommentDate"},
-			{"data": "CommentContent"}
+			{"data": "CommentContent",render: function ( data, type, row ) {
+				return '$'+ data;
+			}}
         ],
 		"columnDefs": [
             {

@@ -1,6 +1,6 @@
 [
 	{'CommentID':'dd1234567','CommentStatus':'0','CommentType':'0','HouseID':'fang123','HouseName':'12345',
-	 'CommentDate':'2016-05-28','CommentContent':'test1','CommnetUserID':'12345','CommnetUserName':'Joe'},
-	{'CommentID':'dd7654321','CommentStatus':'0','CommentType':'1','HouseID':'fang321','HouseName':'54321',
-	 'CommentDate':'2016-05-28','CommentContent':'test1','CommnetUserID':'12345','CommnetUserName':'Joe'}
+	 'CommentDate':'2016-05-28','CommentContent':'test1','CommnetUserID':'12345','CommnetUserName':'Joe',
+	 'CommentScore':34,'CommentCredits':100,'OrderID':'FY11222','ShopID':'12F2323','ShopName':'Shop Name'
+	 }
 ]
