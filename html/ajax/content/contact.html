@@ -32,6 +32,7 @@
 					<table id="simple-table" class="table  table-bordered table-hover">
 						<thead>
 							<tr>
+								<th>联系人ID</th>
 								<th>联系人姓名</th>
 								<th>联系人电话</th>
 								<th>联系人邮箱</th>
@@ -137,11 +138,12 @@
 				"processing": true,
 				"bServerSide": true,
 				"ajax": {
-					"url": "null",
+					"url": "http://210.83.195.229:90/api/IndexAPI/getContactList",
 					"data":{
 						UserID:1,
 						length:10
 					},
+					"dataSrc": "",
 					"type":'GET',
 					"cache": false
 				},
@@ -151,13 +153,7 @@
 					{"data": "ContactPointName" },
 					{"data": "ContactMobile" },
 					{"data": "ContactEmail"},
-					{"data": "ContactContact"}
-				],
-				"columnDefs": [
-					{
-						"visible": true ,
-						"targets": 0
-					}
+					{"data": "ContactLocation"}
 				]
 				
 			});

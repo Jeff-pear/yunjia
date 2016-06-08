@@ -1,3 +1,8 @@
-[
-{TopContactID:123,ContactPointName:'Ronaldo',ContactMobile:'13322333333',ContactEmail:'test@qq.com',ContactLocation:'Dalian Shahekou'}
-]
+
+{
+	iTotalRecords: 25,
+	iTotalDisplayRecords: 25,
+	aaData:[
+		{TopContactID:123,ContactPointName:'Ronaldo',ContactMobile:'13322333333',ContactEmail:'test@qq.com',ContactLocation:'Dalian Shahekou'}
+	]
+}
