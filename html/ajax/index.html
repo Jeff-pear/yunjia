@@ -4,7 +4,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
 		<title>小时工</title>
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<!--[if !IE]> -->
@@ -197,8 +196,6 @@
 					try{jeff.settings.loadState('sidebar')}catch(e){}
 				</script>
 
-
-
 				<ul class="nav nav-list">
 
 					<li class="active">
@@ -246,6 +243,36 @@
 					</li>
 
 					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-key"></i>
+							<span class="menu-text"> 我的账户 </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+						
+						<ul class="submenu">
+							<li class="">
+								<a data-url="page/account_flow_records" href="#page/account_flow_records">
+									<i class="menu-icon fa fa-caret-right"></i>
+									账户交易记录
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a data-url="page/account_manage" href="#page/account_manage">
+									<i class="menu-icon fa fa-caret-right"></i>
+									账户管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="">
 						<a data-url="page/fav" href="#page/fav">
 							<i class="menu-icon fa fa-tags"></i>
 							<span class="menu-text"> 我的收藏 </span>
@@ -273,11 +300,9 @@
 
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
-						
 
 						<b class="arrow"></b>
 						
-
 						<ul class="submenu">
 							<li class="">
 								<a data-url="page/profile" href="#page/profile">
@@ -296,7 +321,6 @@
 
 								<b class="arrow"></b>
 							</li>
-
 
 						</ul>
 					</li>
@@ -344,7 +368,6 @@
 
 					<!-- /section:basics/content.breadcrumbs -->
 					<div class="page-content">
-
 
 						<!-- /section:settings.box -->
 						<div class="page-content-area" data-ajax-content="true">
@@ -415,7 +438,7 @@
             "zeroRecords": "未发现匹配的记录",
             "info": "当前第 _PAGE_ 页，共 _PAGES_ 页",
             "infoEmpty": "无结果",
-            "infoFiltered": "(filtered from _MAX_ total records)",
+            "infoFiltered": "(来自于_MAX_ 条结果中过滤的记录)",
 			"search": "检索:",
 			"processing":"加载中...",
 			"paginate": {
