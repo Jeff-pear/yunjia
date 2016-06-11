@@ -149,6 +149,7 @@
 	
 	 $('#example').DataTable( {
 		"paging":true,
+		"ordering": false,
 		"processing": true,
         "ajax": {
             "url": "http://210.83.195.229:90/api/IndexAPI/index?UserID=1&OrderStatus=-1",
@@ -241,7 +242,6 @@
 					$('#UserName').html(data.UserName);
 					$('#UserMobile').html(data.UserMobile);
 					
-
 			 	}
 			 });
 
